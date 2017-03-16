@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongao.oa.dao.CategoryItemMapper">
+  <resultMap id="BaseResultMap" type="com.dongao.oa.pojo.CategoryItem">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="category_id" jdbcType="BIGINT" property="categoryId" />
+    <result column="classify_id" jdbcType="BIGINT" property="classifyId" />
+    <result column="Item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="needcount" jdbcType="INTEGER" property="needcount" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="stock" jdbcType="INTEGER" property="stock" />
+    <result column="model" jdbcType="VARCHAR" property="model" />
+    <result column="apply_price" jdbcType="DECIMAL" property="applyPrice" />
+    <result column="actual_price" jdbcType="DECIMAL" property="actualPrice" />
+    <result column="item_remarks" jdbcType="VARCHAR" property="itemRemarks" />
+    <result column="delete_flag" jdbcType="INTEGER" property="deleteFlag" />
+  </resultMap>
+  <select id="findApplicationPrice" parameterType="java.lang.Long" resultType="java.lang.Double">
+    select sum(needcount*apply_price) as total from da_category_item where category_id = 129;
+  </select>
+  <select id="findRealPrice" parameterType="java.lang.Long" resultType="java.lang.Double">
+    select sum(count*actual_price) as total from da_category_item where category_id =129
+  </select>
+</mapper>

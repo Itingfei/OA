@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="E:/GitSpace" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../bookstock" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../da_book" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../smsdecrypt" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../smsencryption" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../smsmanager" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../smsreceive" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../smssender" vcs="svn" />
+    <mapping directory="E:/mygit" vcs="Git" />
+  </component>
+</project>

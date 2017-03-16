@@ -1,0 +1,90 @@
+server:
+    port: 8080
+    context-path: #/liuzh/
+spring:
+  datasource:
+    #数据库名称
+        name: da_oa
+    #数据库驱动
+        url: jdbc:mysql://localhost:3306/da_oa?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8
+    #数据库账户
+        username: root
+    #数据库密码
+        password: w028169
+#    #数据库名称
+#        name: da_oa
+#    #数据库驱动
+#        url: jdbc:mysql://masterdb.oa.com:3306/da_oa?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8
+#    #数据库账户
+#        username: liuzhiyi
+#    #数据库密码
+#        password: aaaaaa
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+#        不设置为空会默认扫描classpath:/processes文件夹下的bpmn并自动上传
+  activiti:
+    process-definition-location-prefix:
+    process-definition-location-suffixes:
+    history-level: full
+#---------------------------------
+#  mvc:
+#      view:
+#          prefix: /templates/
+#          suffix: .ftl
+  freemarker:
+      cache: false
+      request-context-attribute: request
+  mvc:
+    favicon:
+      enabled: false
+  #-------------redis
+#  redis:
+#    host: 192.168.6.103
+#    port: 6739
+#    database: 11
+#    pool:
+#      max-idle: 8
+#      min-idle: 0
+#      max-active: 9
+#      max-wait: -1
+
+
+
+
+    #---------------mybatis配置------------------
+mybatis:
+  typeAliasesPackage: com.dongao.oa.pojo
+  mapperLocations: classpath:mapper/*.xml
+
+
+logging:
+  file: D:/Dev/logs/demo.log
+  level:
+     com.dongao: DEBUG
+
+#shiro:
+#    realm: com.dongao.oa.config.ShiroRealm
+#    loginUrl: /login
+#    successUrl: /
+#    unauthorizedUrl: /login
+#    filterChainDefinitions:
+#      "/login": authc
+#      "/logout": logout
+#      "/static/**": anon
+#      "/index": user
+#      "/": user
+#      "/**": authc

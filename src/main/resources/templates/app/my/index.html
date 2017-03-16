@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="../static/common/css/common.css"/>
+        <script src="../static/common/js/sea.js"></script>
+    </head>
+<body>
+    <style>
+        .product{text-align: center; position: relative; margin: 1.5rem 0 2.5rem}
+        .photo{width: 87px; height: 87px; border-radius: 50%; margin: 0 auto;}
+        .name {margin-top:1.25rem;font-size:1.2rem;}
+        .home {margin-top: 1rem; font-size: 0.9rem; color: #666666}
+        .content ul{width: 100%;background: #fff}
+        .content  li{padding: 1rem; border-bottom: 1px solid #E1E1E1; overflow: hidden; }
+        .clear{border: none}
+        .txt{ font-size: 1rem; color: #333333;}
+        .header_back{ visibility: hidden}
+        /*退出登录*/
+        .quit{background: #fff; margin-top: 2rem; padding: 1rem 0; text-align: center;border: 1px solid #E1E1E1; font-size: 1rem; color: #333333}
+        /*点击清除缓存样式*/
+        /*.clear, .cancel{ cursor: pointer}*/
+        /*.clearTip {background: #F2F4F7}*/
+        /*.clearTip p{padding: 1rem 0; text-align: center; margin-top: 0.5rem; background: #fff; font-size: 1rem}*/
+        /*.clearTip p:nth-child(1){color: #53ABE4}*/
+    </style>
+    <div class="page">
+        <div class="content">
+                <!--产品部-->
+            <div class="product">
+                <div class="photo">
+                    <img src="../static/common/img/user_icon.png" alt="">
+                </div>
+                <div class="name"></div>
+                <div class="home"></div>
+            </div>
+            <ul>
+                <li class="myProfile">
+                    <span class="txt fl">我的资料</span>
+                    <span class="arrow_right fr"><i></i></span>
+                </li>
+                <li class="changepwd">
+                    <span class="txt fl">修改密码</span>
+                    <span class="arrow_right fr"><i></i></span>
+                </li>
+            </ul>
+            <!--退出登录-->
+            <div class="quit">
+                退出登录
+            </div>
+        </div>
+    </div>
+    <script>
+        seajs.use('my_index',function(index){
+            index.init();
+        });
+    </script>
+</body>
+</html>

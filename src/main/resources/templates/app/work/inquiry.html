@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="../static/common/css/common.css"/>
+        <script src="../static/common/js/sea.js"></script>
+    </head>
+<body>
+    <style>
+        .content{padding-bottom: 3rem;}
+        .content_title{padding: 1rem 4% 0 4%;width: 92%;color:#333;font-size: 1rem;}
+        .content ::-webkit-input-placeholder{color: #ccc;text-align: left;}
+        .content  li>input.tl{text-align: left;}
+        .content .mt1{margin-top: 1rem;}
+        .content .placeholder{color: #ccc;font-size: 0.9rem;}
+        .content li>span:first-child.w6r{width: 6rem;}
+        .content  ul{width: 96%;padding-left: 4%;background: #fff;color: #666;}
+        .content  ul>li{border-bottom: 1px solid #ededed;padding: 1rem 3% 1rem 0;width: 97%}
+        .content  ul>li:last-child{border-bottom:none;}
+        .content  li>span:first-child{display: inline-block;width:4.5rem;font-size: 0.9rem;}
+        .content  li>input{display: inline-block;width:calc(100% - 77px);width:-webkit-calc(100% - 77px);border: none;font-size: 0.9rem;height: 1rem;text-align: right;}
+        .infos_three>*{float: left;}
+        .info_right{float: right;font-size: 0.9rem;position: relative;}
+        .info_right>span:first-child{margin-right: 0.5rem;}
+        .arrow_right{position: relative;top: 0.14rem;}
+        .detatil_title{font-size: 1rem;color:#666;}
+        /* +-数量控件 */
+        .calc_btn{float: right;font-size: 0.9rem;margin-top: -0.15rem;margin-right: 1%;}
+        .calc_btn>span{width:1.5rem;height:1.5rem;border: 1px solid #999;display: inline-block;float: left;line-height: 1.35rem;font-size: 1rem;text-align: center;}
+        .calc_btn>span:first-child{border-radius: 0.2rem 0 0 0.2rem;border-right: none;-webkit-tap-highlight-color:rgba(230,230,230,1);}
+        .calc_btn>span:nth-child(2){overflow: hidden;}
+        .calc_btn>span:nth-child(2)>input{width:100%;height: 1.5rem;border: none;text-align: center;margin-top: -0.1rem;font-size: 0.9rem;}
+        .calc_btn>span:last-child{border-radius:0 0.2rem 0.2rem 0;border-left: none;-webkit-tap-highlight-color:rgba(230,230,230,1);}
+        /*增加明细*/
+        .add_detail{font-size: 1rem;color: #1a1a1a;text-align: center;padding: 1rem 0;}
+        .add_detail .font_add{color: #009fe8;font-size: 2.5rem;line-height: 1.5rem;}
+        .add_detail .add_text{position: relative;top:-0.25rem;}
+        .c_y{color: #f66627;}
+        /*提交按钮*/
+        .btn_submit{background: #018bda;text-align: center;font-size: 1rem;color:#fff;padding:1rem 0;position: fixed;left: 0;bottom: 0;width: 100%;}
+        .border{border-top: 1px solid #ededed;border-bottom: 1px solid #ededed;}
+        .tip_box_theme_a>.tip_box_theme_a_icon{margin-bottom: 0.5rem;}
+        .tip_box_theme_a{width: 10rem;}
+        /*发票类型*/
+        .invoiceTypePanel{background: #fff;border-radius: 0.5rem;width: 16rem;font-size: 0.9rem;}
+        .invoiceTypePanel>p{color: #333;padding: 1rem 0 1rem 6%;width: 94%;}
+        .invoiceTypePanel>ul{color: #666;width: 94%;padding-left: 6%;border-top: 1px solid #ededed;}
+        .invoiceTypePanel li{border-bottom: 1px solid #ededed;padding: 1rem 0;position: relative;}
+        .invoiceTypePanel li:last-child{border: none;}
+        .invoiceTypePanel li:after{content:'';display: block;position: absolute;top:1rem;right:6%;border: 1px solid #ededed;border-radius: 50%;width: 1rem;height: 1rem;}
+        .invoiceTypePanel li.check:after{background: #018bda;width: 0.6rem;height: 0.6rem;border: 0.25rem solid #fff;-webkit-box-shadow:0px 0 0.1rem 0.1rem #ededed;}
+        .purchase_date{width: 100%;position: absolute;top: 0;left: 0;height: 100%;opacity: 0;}
+        /*删除*/
+        .detatil_title p{ display: inline-block}
+        .detatil_title .delete{ color: #53ABE4; border: 1px solid #EFEFEF; padding: 0.5rem 1rem;border-radius: 5px;float: right;}
+    </style>
+    <div class="page">
+        <div class="content">
+            <p class="content_title">询价结果</p>
+            <div class="box">
+                <ul class="mt1">
+                    <li class="detatil_title clerafix"><p class="fl">采购物品（1）</p></li>
+                    <li>
+                        <span>商品名称：</span>
+                        <input class="itemName" maxlength="20" placeholder="（必填）" type="text"/>
+                    </li>
+                    <li>
+                        <span>物品分类：</span>
+                        <span class="placeholder">（必填）</span>
+                        <p class="info_right invoiceTypes v_hide">
+                            <span>请选择</span>
+                            <span class="arrow_right"><i></i></span>
+                        </p>
+                    </li>
+                    <li>
+                        <span>物品规格：</span>
+                        <input readonly class="model" maxlength="20" type="text"/>
+                    </li>
+                    <li>
+                        <span>物品单价：</span>
+                        <input maxlength="20" readonly class="applyPrice" placeholder="（必填）" type="text" min="0"/>
+                    </li>
+                    <li>
+                        <span>实际单价：</span>
+                        <input maxlength="10" class="actualPrice" placeholder="（必填）" type="number" min="0"/>
+                    </li>
+                    <li>
+                        <span>采购数量：</span>
+                        <span class="placeholder">（必填）</span>
+                        <p class="calc_btn">
+                            <span>-</span>
+                            <span>
+                                <input class="needcount" type="number" maxlength="3" value="0"/>
+                            </span>
+                            <span>+</span>
+                        </p>
+                    </li>
+                    <li>
+                        <span>库存数量：</span>
+                        <input class="stock" maxlength="10" placeholder="（必填）" type="number" min="1"/>
+                    </li>
+                    <li>
+                        <span>备注说明：</span>
+                        <input readonly class="tl itemRemarks" maxlength="50" placeholder=""/>
+                    </li>
+                </ul>
+            </div>
+            <div class="add_detail v_hide">
+                <span class="font_add">+</span>
+                <span class="add_text">增加明细</span>
+            </div>
+            <ul>
+                <li>
+                    <span>库存状态：</span>
+                    <span class="placeholder">（必填）</span>
+                    <p class="info_right inventoryItatus">
+                        <span>请选择</span>
+                        <span class="arrow_right"><i></i></span>
+                    </p>
+                </li>
+                <li>
+                    <span>采购总价：</span>
+                    <input maxlength="20" class="afterTotalPrice" readonly placeholder="（必填）" type="text"/>
+                </li>
+                <li>
+                    <span>采购渠道：</span>
+                    <input maxlength="20" class="channels" placeholder="（必填）" type="text"/>
+                </li>
+                <li>
+                    <span>支付方式：</span>
+                    <input maxlength="50" class="payment"/>
+                </li>
+                <li>
+                    <span>备注说明：</span>
+                    <input class="tl" maxlength="50"/>
+                </li>
+            </ul>
+            <div class="btn_submit">确定</div>
+        </div>
+    </div>
+    <script>
+        seajs.use('inquiry',function(view){
+            view.init();
+        });
+    </script>
+</body>
+</html>

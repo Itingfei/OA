@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="../static/common/css/common.css"/>
+        <script src="../static/common/js/sea.js"></script>
+    </head>
+<body>
+    <style>
+        .content_title{color:#333;font-size: 1.1rem;width: 80%;margin: 1rem auto 0;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;text-align: center;}
+        .content_subtitle{width: 90%;margin: 0 auto;}
+        .c_9{color:#999;}
+        .content_subtitle>p{color:#333;;font-size:0.8rem;width: 45%;display: inline-block;text-align: center;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;}
+        .newslatter_main{width: 94%;margin: 1.2rem auto 0;}
+    </style>
+    <div class="page">
+        <div class="content">
+            <p class="content_title">温馨提示-雨天注意安全</p>
+            <div class="content_subtitle">
+                <p>
+                    <span>来源：</span>
+                    <span class="c_9">人力部</span>
+                </p>
+                <p>
+                    <span>时间：</span>
+                    <span class="c_9">2016-8-19</span>
+                </p>
+            </div>
+            <div class="newslatter_main">
+                内容部分
+            </div>
+        </div>
+    </div>
+    <script>
+        seajs.use('notice',function(notice){
+            notice.init();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="../static/common/css/common.css"/>
+        <script src="../static/common/js/sea.js"></script>
+    </head>
+<body>
+    <style>
+        /*头像部分*/
+        .content{padding-bottom: 3rem;}
+        .content_title{width: 96%;padding-left: 4%;background: #fff;display: none;padding-bottom: 0.8rem;}
+        .content_title_info{padding: 1rem 0;}
+        .content_title .title_border{border-top: 1px solid #ededed;}
+        .content_title>li{padding-top: 0.8rem;}
+        .content_title>li>span:first-child{color:#666;font-size: 1rem;}
+        .content_title>li>span:last-child{color:#333;font-size: 1rem;}
+        /*.content_title>li:nth-child(4)>span{display: inline-block}
+        .content_title>li:nth-child(4)>span:first-child{color:#333;font-size: 1rem; float: left; width: 23%}
+        .content_title>li:nth-child(4)>span:last-child{color:#333;font-size: 1rem; width: 75%; word-wrap: break-word}*/
+        .user_icon{width: 4.5rem;display:block;height: 4.5rem;border-radius: 50%;float: left;}
+        .purchase_proc{float: left;margin: 0.7rem 0 0 1rem;max-width: -webkit-calc(100% - 6.5rem);overflow: hidden;white-space:nowrap; text-overflow:ellipsis;}
+        .purchase_proc>span{display: block;font-size: 1.1rem;}
+        .purchase_proc>span:first-child{color:#1a1a1a;}
+        .purchase_proc>span:last-child{color:#666;font-size: 1rem;}
+        .mt1{margin-top: 1rem;}
+        .b_n{border-bottom: none!important;}
+        /*提交按钮*/
+        .btn_submit{background: #018bda;text-align: center;font-size: 1rem;color:#fff;position: fixed;left: 0;bottom: 0;width: 100%;display: -webkit-box;z-index: 2;}
+        .btn_submit>span{-webkit-box-flex: 1;display: block;text-align: center;padding:1rem 0;background: #018bda;}
+        .btn_submit .bg_fc{background: #fcfcfc;color: #333;}
+        /* 询价前*/
+        .border{border-bottom: 1px solid #ededed;}
+        .purchase_price_after, .purchase_price_before{padding: 1rem 4%;;background: #fff;width: 92%;display: none;}
+        .purchase_price_after>span:first-child{color:#333;float: left;}
+        .purchase_price_after>span:last-child{color:#f66627;float: right;}
+        /*列表*/
+        .content_purchase_list{width: 100%;background: #fff;}
+        .content_purchase_list>li{width: 100%;}
+        .content_purchase_list>li>div{border-bottom: 1px solid #ededed;padding:1rem 4% 1rem 0;width: 92%;margin-left: 4%;}
+        .content_purchase_list>li>div:first-child>i{display:block;width: 0px;height: 0px;border: 0.4rem solid transparent;border-left-color: #999;float: left;margin-top: 0.25rem;}
+        .content_purchase_list>li>div:first-child>p{margin-left: 0.5rem;float: left;color:#333;max-width: -webkit-calc(100% - 55px);overflow: hidden;white-space:nowrap; text-overflow:ellipsis;}
+        .content_purchase_list>li>div:first-child>span{color:#999;float: right;}
+        /*详情*/
+        .content_purchase_detail{background: #f9f9f9;font-size: 0.9rem;width: 92%;padding: 0 4%;}
+        .content_purchase_detail>li{padding-top: 0.6rem;}
+        .content_purchase_detail>li:last-child{padding-bottom: 0.6rem;}
+        .content_purchase_detail>li>span:first-child{color:#666;}
+        .content_purchase_detail>li>span:last-child{color:#333;}
+        /*进度*/
+        .content_purchase_progress{background: #fff;width: 85%;padding-left: 15%;border-bottom: 1px solid #ededed;}
+        .content_purchase_progress>li{color:#666;font-size: 1rem;padding: 1rem 5% 1rem 0;width: 95%;border-bottom: 1px solid #ededed;position: relative;}
+        .content_purchase_progress>li:before{content: "";display: block;width: 0.5rem;height: 0.5rem;background: #d8d8d8;position: absolute;border-radius: 50%;left: -10%;top:1.4rem;}
+        .content_purchase_progress>li:first-child:before{width: 0.8rem;height:0.8rem;background: #018bda;-webkit-box-shadow:0px 0px 0.1rem 5px #bfe2f6;top:1.2rem;margin-left: -0.13rem;z-index: 1;}
+        .content_purchase_progress>li:after{content: "";display: block;width: 1px;border: none;height: 5.2rem;background: #d8d8d8;position: absolute;left: -10%;top:0;margin-left: 0.25rem;}
+        .content_purchase_progress>li:first-child:after{top:1.4rem;height: 3.8rem;}
+        .content_purchase_progress>li:last-child:after{height: 1.4rem;}
+        .content_purchase_progress>li:first-child{color:#018bda;}
+        .content_purchase_progress>li:last-child{border: none;}
+        .content_purchase_progress>li>p:first-child{}
+        .content_purchase_progress>li>p:first-child>span:first-child{float: left;}
+        .content_purchase_progress>li>p:first-child>span:last-child{float: right;font-size: 0.8rem;}
+        .content_purchase_progress>li>p:last-child{font-size: 0.8rem;margin-top: 0.5rem;}
+        .content_title>li:first-child>span:last-child{ color: #f66627;}
+        .purchase_price_after span:first-child{ color: #018bda;}
+        .purchase_price_before .info_right{ color: #696969;}
+        .content_purchase_detail{ display: none;}
+        input{ border: none;}
+        .info_right { font-size: 0.9rem; /* position: relative; */  }
+        .info_right>span:first-child { margin-right: 0.5rem;}
+        .arrow_right {  position: relative;  top: 0.14rem; }
+        .invoiceTypePanel {background: #fff;border-radius: 0.5rem;width: 16rem;font-size: 0.9rem;}
+        .invoiceTypePanel>p {color: #333;padding: 1rem 0 1rem 6%;width: 94%;}
+        .invoiceTypePanel>ul {color: #666;width: 94%;padding-left: 6%;border-top: 1px solid #ededed;}
+        .invoiceTypePanel li {border-bottom: 1px solid #ededed;padding: 1rem 0;position: relative;}
+        .invoiceTypePanel li:last-child {border: none;}
+        .invoiceTypePanel li:after {content: '';display: block;position: absolute;top: 1rem;right: 6%;border: 1px solid #ededed;border-radius: 50%;width: 1rem;height: 1rem;}
+        .invoiceTypePanel li.check:after {background: #018bda;width: 0.6rem;height: 0.6rem;border: 0.25rem solid #fff;-webkit-box-shadow: 0px 0 0.1rem 0.1rem #ededed;}
+        .writeCancle {  background: #fff;  border-radius: 0.5rem;  width: 16rem;  font-size: 0.9rem;  padding: 0 0.6rem;  }
+        .writeCancle>p { text-align: center; font-size: 1rem; padding: 1rem 0;}
+        .writeCancle>textarea {width:90%; width:-webkit-calc(100% - 1rem - 2px);margin: 0 auto; resize: none; height: 4rem;padding:0.5rem;}
+        .writeCancle>ul{ display: flex;}
+        .writeCancle>ul>li{ flex: 1; text-align: center; padding: 1rem 0; color: #20A9FF}
+        .writeCancle>ul>li:first-child{ border-right: 1px solid #BEBEBE}
+
+    </style>
+    <div class="page">
+        <div class="content">
+            <ul class="content_title">
+                <li class="clerafix content_title_info">
+                    <p class="user_icon">
+                        <img src="" alt=""/>
+                    </p>
+                    <p class="purchase_proc">
+                        <span></span>
+                        <span></span>
+                    </p>
+                </li>
+                <li class="title_border">
+                    <span>审批编号：</span>
+                    <span></span>
+                </li>
+                <li>
+                    <span>所在部门：</span>
+                    <span></span>
+                </li>
+                <li>
+                    <span>申请理由：</span>
+                    <span></span>
+                </li>
+                <li>
+                    <span>期望交付日期：</span>
+                    <span></span>
+                </li>
+            </ul>
+            <ul class="content_title">
+                <li class="title_border">
+                    <span>库存状态：</span>
+                    <span></span>
+                </li>
+                <li>
+                    <span>采购总价：</span>
+                    <span></span>
+                </li>
+                <li>
+                    <span>采购渠道：</span>
+                    <span></span>
+                <li>
+                    <span>支付方式：</span>
+                    <span></span>
+                </li>
+                <li>
+                    <span>备注说明：</span>
+                    <span></span>
+                </li>
+            </ul>
+            <p class="clerafix purchase_price_after border mt1">
+                <span>询价后</span>
+                <span class="info_right c_y"></span>
+            </p>
+            <ul class="content_purchase_list">
+            </ul>
+            <!--询价前-->
+            <p class="clerafix purchase_price_before border mt1">
+                <span class="fl">询价前</span>
+                <span class="info_right c_y fr"></span>
+            </p>
+            <ul class="content_purchase_list">
+            </ul>
+            <ul class="content_purchase_progress"></ul>
+            <div class="btn_submit">
+            </div>
+        </div>
+    </div>
+    <script>
+        seajs.use('purchase_detail',function(view){
+            view.init();
+        });
+    </script>
+</body>
+</html>

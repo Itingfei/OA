@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongao.oa.dao.CategoryMapperExt">
+  <resultMap id="BaseResultMap" type="com.dongao.oa.pojo.Category">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="deployment_id" jdbcType="VARCHAR" property="deploymentId" />
+    <result column="purpose" jdbcType="VARCHAR" property="purpose" />
+    <result column="buyer_id" jdbcType="BIGINT" property="buyerId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="delete_flag" jdbcType="INTEGER" property="deleteFlag" />
+    <result column="expect_date" jdbcType="VARCHAR" property="expectDate" />
+    <result column="before_total_price" jdbcType="DECIMAL" property="beforeTotalPrice" />
+    <result column="after_total_price" jdbcType="DECIMAL" property="afterTotalPrice" />
+  </resultMap>
+  <select id="selectCategoryList" resultType="java.util.Map" parameterType="java.util.Map">
+    SELECT
+	c.*, u.real_name AS applyUserName,
+	du.real_name AS buyerName
+    FROM
+        da_category c
+    LEFT JOIN da_oa_sys_user u ON c.user_id = u.id
+    LEFT JOIN da_oa_sys_user du ON c.buyer_id = du.id
+    WHERE
+        c.delete_flag = 0
+    AND u.delete_flag = 0
+    AND u.id = #{userid}
+    <if test="title!= null and title !=''" >
+      and c.title like CONCAT('%',#{title},'%' )
+    </if>
+    <if test="startCreateDate!= null" >
+      and c.create_date &gt;= #{startCreateDate}
+    </if>
+    <if test="endCreateDate!= null" >
+      and c.create_date &lt;= #{endCreateDate}
+    </if>
+    order by create_date desc
+  </select>
+</mapper>

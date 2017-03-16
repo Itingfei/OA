@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../bookstock" />
+    <file type="web" url="file://$PROJECT_DIR$/../da_book" />
+    <file type="web" url="file://$PROJECT_DIR$" />
+    <file type="web" url="file://$PROJECT_DIR$/../smsmanager" />
+    <file type="web" url="file://$PROJECT_DIR$/../smsreceive" />
+    <file type="web" url="file://$PROJECT_DIR$/../smssender" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../smsmanager/pom.xml" />
+        <option value="$PROJECT_DIR$/../smsdecrypt/pom.xml" />
+        <option value="$PROJECT_DIR$/../da_book/pom.xml" />
+        <option value="$PROJECT_DIR$/../smsencryption/pom.xml" />
+        <option value="$PROJECT_DIR$/../smsreceive/pom.xml" />
+        <option value="$PROJECT_DIR$/../smssender/pom.xml" />
+        <option value="$PROJECT_DIR$/../bookstock/pom.xml" />
+        <option value="D:/eclipseWorkSpace/SourceCode/ch11_1/pom.xml" />
+        <option value="D:/eclipseWorkSpace/SourceCode/ch12/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="D:/eclipseWorkSpace/SourceCode/ch12/config/pom.xml" />
+        <option value="D:/eclipseWorkSpace/SourceCode/ch12/discovery/pom.xml" />
+        <option value="D:/eclipseWorkSpace/SourceCode/ch12/monitor/pom.xml" />
+        <option value="D:/eclipseWorkSpace/SourceCode/ch12/person/pom.xml" />
+        <option value="D:/eclipseWorkSpace/SourceCode/ch12/pom.xml" />
+        <option value="D:/eclipseWorkSpace/SourceCode/ch12/some/pom.xml" />
+        <option value="D:/eclipseWorkSpace/SourceCode/ch12/ui/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="false" project-jdk-name="1.7" project-jdk-type="JavaSDK" />
+  <component name="SvnBranchConfigurationManager">
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
+</project>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongao.oa.dao.PositionMapper">
+  <resultMap id="BaseResultMap" type="com.dongao.oa.pojo.Position">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="del_flag" jdbcType="INTEGER" property="delFlag" />
+    <result column="is_leader" jdbcType="INTEGER" property="isLeader" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+  </resultMap>
+  <select id="selectByOrgIdAndPositionId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+      SELECT
+          p.id,
+          p.`name`,
+          p.is_leader AS isLeader
+      FROM
+          da_oa_position p,
+          da_oa_organization dor,
+          da_oa_position_organization dpo,
+      da_oa_position_user_organization puo
+      WHERE
+          p.del_flag = 0
+      AND dor.del_flag = 0
+      AND dpo.org_id = dor.id
+      AND dpo.position_id = p.id
+      AND dpo.org_id = #{0} AND dpo.position_id = #{1}
+      AND puo.position_organization_id = (SELECT id from da_oa_position_organization where org_id = #{0} and position_id = #{1} AND del_flag = 0)
+  </select>
+   <select id="selectPositionByUserId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT id,parent_id AS parentId,`name` FROM da_oa_position where id = (SELECT
+            position_id
+        FROM
+            da_oa_position_organization
+        WHERE
+            id = (
+                SELECT
+                    position_organization_id
+                FROM
+                    da_oa_position_user_organization
+                WHERE
+                    user_id = #{0}
+            )
+        )
+   </select>
+    <select id="selectLevelByOrgIdAndPid" parameterType="com.dongao.oa.pojo.PositionAndOrganization" resultMap="BaseResultMap">
+        SELECT
+            p.id,p.`level`
+        FROM
+            da_oa_position p
+        INNER JOIN da_oa_position_organization dor ON p.id = dor.position_id
+        AND dor.org_id = #{0}
+        INNER JOIN da_oa_position_user_organization duo ON dor.id = duo.position_organization_id
+        WHERE
+            p.`level` > (
+                SELECT
+                    `level`
+                FROM
+                    da_oa_position
+                WHERE
+                    id = (
+                        SELECT
+                            position_id
+                        FROM
+                            da_oa_position_organization
+                        WHERE
+                            org_id = #{0}
+                        AND position_id = #{1}
+                        AND del_flag = 0
+                    )
+            )
+        AND p.del_flag = 0
+    </select>
+    <select id="selectMaxLevel" resultType="java.lang.Integer">
+        SELECT MAX(`level`) from da_oa_position
+    </select>
+</mapper>

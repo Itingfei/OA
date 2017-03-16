@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongao.oa.dao.OrganizationMapper">
+  <!-- 通过Map获取当前级别最大的deptCode -->
+  <select id="selectMaxOrgCode" parameterType="com.dongao.oa.pojo.Organization" resultType="java.lang.String">
+    <![CDATA[
+            select MAX(org_code) from da_oa_organization d
+        ]]>
+    <where>
+      <if test="parentId !=null and parentId !='' and (orgCode ==null or orgCode=='')"> and d.id=#{parentId} </if>
+      <if test="orgCode !=null and orgCode !=''"> and LEFT(d.org_code,LENGTH(d.org_code)-2)=#{orgCode} </if>
+    </where>
+  </select>
+  <select id="selectByCondition" parameterType="java.util.Map" resultType="java.util.Map">
+    SELECT
+    porg.id,
+	p.id AS positionId,
+	p.`name` AS positionName
+    FROM
+        da_oa_organization org,
+        da_oa_position p,
+        da_oa_position_organization porg
+    WHERE
+        porg.del_flag = 0
+    AND p.del_flag = 0
+    AND org.del_flag = 0
+    AND org.id = porg.org_id
+    AND p.id = porg.position_id
+    <if test="entity.organizationId!=null">
+      AND porg.org_id = #{entity.organizationId,jdbcType=INTEGER}
+    </if>
+    <if test="entity.positionName!=null and entity.positionName!=''">
+      AND p.`name` LIKE '%${entity.positionName}%'
+    </if>
+  </select>
+</mapper>

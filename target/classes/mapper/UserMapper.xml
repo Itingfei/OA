@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongao.oa.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.dongao.oa.pojo.User">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="org_id" jdbcType="BIGINT" property="orgId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="link_phone" jdbcType="VARCHAR" property="linkPhone" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
+    <result column="profession" jdbcType="INTEGER" property="profession" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="lock_status" jdbcType="INTEGER" property="lockStatus" />
+    <result column="delete_flag" jdbcType="INTEGER" property="deleteFlag" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="birthday" jdbcType="TIMESTAMP" property="birthday" />
+    <result column="entry_date" jdbcType="TIMESTAMP" property="entryDate" />
+  </resultMap>
+  <select id="selectAllByCondition" parameterType="java.util.Map" resultType="java.util.Map">
+      SELECT
+      suser.id AS userId,
+      suser.user_name,
+      CASE
+      WHEN suser.gender =1 THEN
+      '男'
+      WHEN suser.gender =2 THEN
+      '女'
+      END gender,
+      suser.img_url,
+      suser.real_name,
+      puo.leader_id,
+      suser.link_phone,
+      suser.email,
+      suser.create_date,
+      suser.lock_status,
+      suser.address,
+      suser.description,
+      suser.password,
+      suser.salt,
+      DATE_FORMAT(suser.birthday, '%Y-%m-%d') AS birthday,
+      DATE_FORMAT(
+      suser.entry_date,
+      '%Y年%m月%d日'
+      ) AS entryDate,
+      p.id AS positionId,
+      p.`name` AS positionName,
+      p.is_leader AS isLeader,
+      dor.id AS orgId,
+      dor.org_name AS orgName
+      FROM
+      da_oa_sys_user suser
+      LEFT JOIN da_oa_position_user_organization puo ON suser.id = puo.user_id
+      LEFT JOIN da_oa_position_organization po ON puo.position_organization_id = po.id
+      LEFT JOIN da_oa_position p ON p.id = po.position_id AND  p.del_flag=0
+      LEFT JOIN da_oa_organization dor ON dor.id = po.org_id AND dor.del_flag=0
+      WHERE
+      suser.delete_flag = 0
+      <if test="userName!= null and userName !=''" >
+          and suser.user_name  = #{userName}
+      </if>
+      <if test="realName!= null and realName !=''" >
+          and suser.real_name like CONCAT('%',#{realName},'%' )
+      </if>
+      <if test="linkPhone!= null and linkPhone !=''" >
+          and suser.link_phone = #{linkPhone}
+      </if>
+      <if test="lockStatus!= null" >
+          and suser.lock_status = #{lockStatus}
+      </if>
+      <if test="startCreateDate!= null" >
+          and suser.create_date &gt;= #{startCreateDate}
+      </if>
+      <if test="userId!= null" >
+          and suser.id = #{userId}
+      </if>
+      <if test="endCreateDate!= null" >
+          and suser.create_date &lt;= #{endCreateDate}
+      </if>
+      <if test="orgId!= null" >
+          and dor.id = #{orgId}
+      </if>
+      <if test="positionId!= null" >
+          and p.id = #{positionId}
+      </if>
+      <if test="orgCode!= null and orgCode !=''" >
+          AND LEFT(dor.org_code,4)=#{orgCode}
+      </if>
+       ORDER BY  suser.create_date DESC
+  </select>
+  <select id="selectUserInfoByUserId" parameterType="java.lang.Long" resultType="java.util.Map">
+   SELECT
+        suser.*, p.id AS positionId,p.is_leader AS isLeader,
+        p.`name` AS positionName,
+        dor.id AS orgId,
+        dor.org_name AS orgName
+    FROM
+        da_oa_sys_user suser
+			LEFT JOIN da_oa_position_user_organization puo ON suser.id = puo.user_id
+      LEFT JOIN da_oa_position_organization po ON puo.position_organization_id = po.id
+      LEFT JOIN da_oa_position p ON p.id = po.position_id
+      LEFT JOIN da_oa_organization dor ON dor.id = po.org_id
+    WHERE
+        suser.delete_flag = 0
+    AND suser.id = #{0}
+  </select>
+    <select id="selectAddressBookSortLetters" parameterType="java.lang.String" resultType="java.util.Map">
+        SELECT
+        GROUP_CONCAT(id,':',real_name,':',img_url) AS `result`,
+        sortLetters
+        FROM
+        da_oa_sys_user
+        WHERE
+        delete_flag = 0
+        <if test="name!= null and name !=''" >
+            AND real_name LIKE CONCAT('%',#{name},'%' )
+        </if>
+        GROUP BY
+        sortLetters ORDER BY sortLetters DESC
+    </select>
+</mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+   <!--<classPathEntry location="D:\work\mysql-connector-java-5.1.35.jar"/>-->
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.dongao.oa.utils.MapperUtils"/>
+            <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+            <property name="caseSensitive" value="true"/>
+        </plugin>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/da_oa"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+        <javaModelGenerator targetPackage="com.dongao.oa.pojo" targetProject="src\main\java">
+            <property name="rootClass" value="com.dongao.oa.pojo.BaseEntity"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="mapper"  targetProject="src\main\resources"/>
+        <javaClientGenerator targetPackage="com.dongao.oa.dao" targetProject="src\main\java" type="XMLMAPPER"/>
+        <!--<table tableName="da_oa_organization" domainObjectName="Organization" />-->
+        <!--<table tableName="da_oa_process_personnel" domainObjectName="ProcessPersonnel" />-->
+        <!--<table tableName="da_category_item" domainObjectName="CategoryItem" />-->
+        <!--<table tableName="da_oa_sys_menu" domainObjectName="Menu" />-->
+        <!--<table tableName="da_oa_sys_role" domainObjectName="Role" />-->
+        <!--<table tableName="da_oa_sys_role_menu" domainObjectName="RoleAndMenu" />-->
+        <!--<table tableName="da_oa_sys_user" domainObjectName="User" />-->
+        <!--<table tableName="da_oa_sys_user_role" domainObjectName="UserAndRole" />-->
+        <!--<table tableName="da_oa_user_organization" domainObjectName="UserAndOrganization" />-->
+        <!--<table tableName="da_oa_message" domainObjectName="Message" />-->
+        <table tableName="da_oa_classify" domainObjectName="Classify" />
+    </context>
+</generatorConfiguration>

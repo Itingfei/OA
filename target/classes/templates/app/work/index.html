@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="../static/common/css/common.css"/>
+        <script src="../static/common/js/sea.js"></script>
+    </head>
+<body>
+    <style>
+        /*东奥快讯*/
+        .similar { padding: 0.75rem 1rem 0.75rem 1rem; border-bottom: 1px solid #E1E1E1; background: #fff; color: #797979}
+        .content_newsletter{overflow: hidden;background: #fff; border-bottom: 1px solid #E1E1E1;}
+        .content_newsletter ul.content_newsletter_list{ padding-left: 3.2rem}
+        .content_newsletter_list li:before{z-index: 1;content:"";display: block;width: 0.65rem;height: 0.65rem;background:#cfdfe7;border-radius: 50%;border:0.15rem solid #fff;position: absolute;top:1rem;left: -2.1rem}
+        .content_newsletter_list li:first-child:before{background: #018bda;border: 0.4rem solid #edf8fd;-webkit-box-shadow:0px 0px 0.1rem 1px #37a0dc;top:0.6rem;margin-left:-0.26rem;}
+        .content_newsletter_list li:after{content:"";display: block;width: 0.1rem;height: 4.6rem;background:#cfdfe7;position: absolute;top:0;left: -1.7rem}
+        .content_newsletter_list li:first-child:after{height: 4rem;top:0.6rem;}
+        .content_newsletter_list li:last-child:after{height: 1rem;}
+        .content_newsletter_list li:last-child{border: none;}
+        .content_newsletter_list li{border-bottom: 1px solid #dedede;padding: 0.7rem 1rem 0.7rem 0;position: relative;}
+        .content_newsletter_list li p{overflow: hidden;white-space:nowrap;text-overflow:ellipsis;line-height: 1.6rem;}
+        .content_newsletter_list li p:first-child{text-align: left;color:#333;font-size: 1rem;}
+        .content_newsletter_list li p:last-child{text-align: right;color:#999;font-size: 0.8rem;}
+        /*申请采购、采购、询价*/
+        .thing { font-size: 0.75rem; margin: 0.5rem 0}
+        .thing>ul {  padding: 0 1rem; border-bottom: 1px solid #E1E1E1; overflow: hidden; background: #fff}
+        .thing li{ padding: 0.6rem 0; text-align: center; box-sizing: border-box; width: 5.1rem}
+        .thing .pic { width:3rem; height: 3rem; position: relative; margin: 0.3rem auto; }
+        .thing li .count {  background: #ff5b10;  border-radius: 0.7rem;  position: absolute;  right: -16%;  top: -0.5rem;  font-size: 0.8rem;  line-height: 0.8rem;  padding: 0.3rem 0.45rem; color: #fff }
+        /*我发起的事项*/
+        .content_approval li>span { display: block; width: 37px; height: 37px; background: #5FB4E7; padding: 0.5rem; box-sizing: border-box; border-radius: 10px; position: absolute; left: 1rem;}
+        .content_approval li>span>img{ width: 20px; height: 22px}
+        /*审批列表*/
+        .content_approval{ }
+        .content_approval .list_select li>span{display: none;}
+        .content_approval .list_select>li:before{display: block;}
+        .content_approval_list{background: #fff;}
+        .content_approval_list li{border-bottom: 1px solid #ededed;padding:1rem 5% 0.6rem 68px;position: relative;}
+        .content_approval_list li:last-child{border: none;}
+        .content_approval_list li>p{margin-top: 1rem;}
+        .content_approval_list li>.approval_title{line-height: 1rem;margin-top: 0;}
+        .content_approval_list>li:before{content:'';position: absolute;display: none;width: 2rem;height: 2rem;border: 1px solid #ededed;border-radius: 50%;left: -13.5%;top:38%;}
+
+        .approval{display: none;}
+        .approval_title>span:first-child{float: left;font-size: 1.05rem;}
+        .approval_title>span:last-child{float: right;font-size: 0.8rem; color: #f66627;}
+        .approval_detatil{font-size: 1rem;color: #000000;}
+        .approval_detatil>span:last-child { color: #8F8E8E; margin-left: 15px; font-size: 0.8rem}
+        .approval_date{font-size: 0.8rem;}
+        .approval_date>span:first-child{float:left;color:#999;}
+        .approval_date>span:last-child{float:right; color: #1a1a1a;}
+        .arrow_right{margin-top: 0.2rem;}
+        /*提示*/
+        .content_approval .tip{ text-align: center; color: #A4A4A4; padding: 1rem 0 2rem}
+    </style>
+    <div class="page">
+        <div class="content">
+           <!--东奥快讯-->
+            <div class="similar newsletter clerafix">
+                <span class="fl">东奥快讯</span>
+                <span class="arrow_right fr"><i></i></span>
+            </div>
+            <div class="content_newsletter">
+                <ul class="content_newsletter_list">
+                    <li>
+                        <p>东奥OA使用说明</p>
+                        <p>16:30&nbsp;产品部</p>
+                    </li>
+                    <li>
+                        <p>东奥OA用户体验提升意见征集</p>
+                        <p>星期二&nbsp;人事部</p>
+                    </li>
+                </ul>
+            </div>
+            <!--申请采购、采购、询价-->
+            <div class="thing">
+                <ul>
+                </ul>
+            </div>
+            <!--我发起的-->
+            <div class="similar approval clerafix">
+                <span class="fl"></span>
+                <span class="arrow_right fr"><i></i></span>
+            </div>
+            <!--发起的事项详情-->
+            <div class="content_approval">
+                <ul class="content_approval_list">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        seajs.use('work_index',function(index){
+            index.init();
+        });
+    </script>
+</body>
+</html>

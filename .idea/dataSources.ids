@@ -1,0 +1,2357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - da_oa@localhost" uuid="92a82892-97b0-4442-bd40-0ee80ec9ca72">
+    <database-info product="MySQL" version="5.7.5-m15" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="da_oa">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="babasport"/>
+      <schema id="3" name="blog"/>
+      <schema id="4" name="bookstock"/>
+      <schema id="5" name="bpm"/>
+      <schema id="6" name="city"/>
+      <schema id="7" name="cjf"/>
+      <schema id="8" name="crawler"/>
+      <schema id="9" name="da_book"/>
+      <schema id="10" name="db_ijob"/>
+      <schema id="11" name="demo"/>
+      <schema id="12" name="dsp"/>
+      <schema id="13" name="eeonlines"/>
+      <schema id="14" name="elec"/>
+      <schema id="15" name="exls"/>
+      <schema id="16" name="fortunegod"/>
+      <schema id="17" name="huanovo_yjk"/>
+      <schema id="18" name="hydata"/>
+      <schema id="19" name="ikphp"/>
+      <schema id="20" name="information_schema"/>
+      <schema id="21" name="itcjg"/>
+      <schema id="22" name="izbra"/>
+      <schema id="23" name="jeecg"/>
+      <schema id="24" name="jfinal_demo"/>
+      <schema id="25" name="leave"/>
+      <schema id="26" name="leveldb"/>
+      <schema id="27" name="mysql"/>
+      <schema id="28" name="orderfood"/>
+      <schema id="29" name="orgmgr"/>
+      <schema id="30" name="performance_schema"/>
+      <schema id="31" name="qqzone"/>
+      <schema id="32" name="reputedly"/>
+      <schema id="33" name="reputedly_bak"/>
+      <schema id="34" name="saipu"/>
+      <schema id="35" name="saipu_dev"/>
+      <schema id="36" name="school"/>
+      <schema id="37" name="sms_manager"/>
+      <schema id="38" name="spider"/>
+      <schema id="39" name="tb"/>
+      <schema id="40" name="test"/>
+      <schema id="41" name="testredis"/>
+      <schema id="42" name="testzcf"/>
+      <schema id="43" name="webcbo_page"/>
+      <schema id="44" name="yaoheo"/>
+      <schema id="45" name="yunguanshi"/>
+      <schema id="46" name="zcfdemo"/>
+      <table id="47" parent="1" name="act_evt_log"/>
+      <table id="48" parent="1" name="act_ge_bytearray"/>
+      <table id="49" parent="1" name="act_ge_property"/>
+      <table id="50" parent="1" name="act_hi_actinst"/>
+      <table id="51" parent="1" name="act_hi_attachment"/>
+      <table id="52" parent="1" name="act_hi_comment"/>
+      <table id="53" parent="1" name="act_hi_detail"/>
+      <table id="54" parent="1" name="act_hi_identitylink"/>
+      <table id="55" parent="1" name="act_hi_procinst"/>
+      <table id="56" parent="1" name="act_hi_taskinst"/>
+      <table id="57" parent="1" name="act_hi_varinst"/>
+      <table id="58" parent="1" name="act_id_group"/>
+      <table id="59" parent="1" name="act_id_info"/>
+      <table id="60" parent="1" name="act_id_membership"/>
+      <table id="61" parent="1" name="act_id_user"/>
+      <table id="62" parent="1" name="act_procdef_info"/>
+      <table id="63" parent="1" name="act_re_deployment"/>
+      <table id="64" parent="1" name="act_re_model"/>
+      <table id="65" parent="1" name="act_re_procdef"/>
+      <table id="66" parent="1" name="act_ru_event_subscr"/>
+      <table id="67" parent="1" name="act_ru_execution"/>
+      <table id="68" parent="1" name="act_ru_identitylink"/>
+      <table id="69" parent="1" name="act_ru_job"/>
+      <table id="70" parent="1" name="act_ru_task"/>
+      <table id="71" parent="1" name="act_ru_variable"/>
+      <table id="72" parent="1" name="da_category"/>
+      <table id="73" parent="1" name="da_category_item"/>
+      <table id="74" parent="1" name="da_deployment_category">
+        <comment>流程分类表</comment>
+      </table>
+      <table id="75" parent="1" name="da_deployment_category_organization">
+        <comment>流程和分类关联表</comment>
+      </table>
+      <table id="76" parent="1" name="da_oa_classify">
+        <comment>消息表</comment>
+      </table>
+      <table id="77" parent="1" name="da_oa_message">
+        <comment>消息表</comment>
+      </table>
+      <table id="78" parent="1" name="da_oa_organization"/>
+      <table id="79" parent="1" name="da_oa_position">
+        <comment>职位表</comment>
+      </table>
+      <table id="80" parent="1" name="da_oa_position_organization">
+        <comment>职位,组织架构,关联表</comment>
+      </table>
+      <table id="81" parent="1" name="da_oa_position_user_organization">
+        <comment>职位,组织架构,用户关联表</comment>
+      </table>
+      <table id="82" parent="1" name="da_oa_process_personnel">
+        <comment>审批人关系表</comment>
+      </table>
+      <table id="83" parent="1" name="da_oa_sys_menu">
+        <comment>菜单表</comment>
+      </table>
+      <table id="84" parent="1" name="da_oa_sys_role">
+        <comment>角色表</comment>
+      </table>
+      <table id="85" parent="1" name="da_oa_sys_role_menu">
+        <comment>角色-菜单</comment>
+      </table>
+      <table id="86" parent="1" name="da_oa_sys_user"/>
+      <table id="87" parent="1" name="da_oa_sys_user_role">
+        <comment>用户-角色</comment>
+      </table>
+      <table id="88" parent="1" name="da_oa_user_organization"/>
+      <table id="89" parent="1" name="t_coslers"/>
+      <column id="90" parent="47" name="LOG_NR_">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="91" parent="47" name="TYPE_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="92" parent="47" name="PROC_DEF_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="93" parent="47" name="PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="94" parent="47" name="EXECUTION_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="95" parent="47" name="TASK_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="96" parent="47" name="TIME_STAMP_">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <column id="97" parent="47" name="USER_ID_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="98" parent="47" name="DATA_">
+        <data-type>longblob|0</data-type>
+      </column>
+      <column id="99" parent="47" name="LOCK_OWNER_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="100" parent="47" name="LOCK_TIME_">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="101" parent="47" name="IS_PROCESSED_">
+        <data-type>tinyint(4)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="102" parent="47" name="PRIMARY">
+        <columns>LOG_NR_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="103" parent="48" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="104" parent="48" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="105" parent="48" name="NAME_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="106" parent="48" name="DEPLOYMENT_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="107" parent="48" name="BYTES_">
+        <data-type>longblob|0</data-type>
+      </column>
+      <column id="108" parent="48" name="GENERATED_">
+        <data-type>tinyint(4)|0</data-type>
+      </column>
+      <index id="109" parent="48" name="ACT_FK_BYTEARR_DEPL">
+        <columns>DEPLOYMENT_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="110" parent="48" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="111" parent="48" name="act_ge_bytearray_ibfk_1">
+        <columns>DEPLOYMENT_ID_</columns>
+        <ref-key>~.act_re_deployment.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="112" parent="49" name="NAME_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="113" parent="49" name="VALUE_">
+        <data-type>varchar(300)|0</data-type>
+      </column>
+      <column id="114" parent="49" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <key id="115" parent="49" name="PRIMARY">
+        <columns>NAME_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="116" parent="50" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="117" parent="50" name="PROC_DEF_ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="118" parent="50" name="PROC_INST_ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="119" parent="50" name="EXECUTION_ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="120" parent="50" name="ACT_ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="121" parent="50" name="TASK_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="122" parent="50" name="CALL_PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="123" parent="50" name="ACT_NAME_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="124" parent="50" name="ACT_TYPE_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="125" parent="50" name="ASSIGNEE_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="126" parent="50" name="START_TIME_">
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="127" parent="50" name="END_TIME_">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="128" parent="50" name="DURATION_">
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="129" parent="50" name="TENANT_ID_">
+        <data-type>varchar(255)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <index id="130" parent="50" name="ACT_IDX_HI_ACT_INST_END">
+        <columns>END_TIME_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="131" parent="50" name="ACT_IDX_HI_ACT_INST_EXEC">
+        <columns>EXECUTION_ID_
+ACT_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="132" parent="50" name="ACT_IDX_HI_ACT_INST_PROCINST">
+        <columns>PROC_INST_ID_
+ACT_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="133" parent="50" name="ACT_IDX_HI_ACT_INST_START">
+        <columns>START_TIME_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="134" parent="50" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="135" parent="51" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="136" parent="51" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="137" parent="51" name="USER_ID_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="138" parent="51" name="NAME_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="139" parent="51" name="DESCRIPTION_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="140" parent="51" name="TYPE_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="141" parent="51" name="TASK_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="142" parent="51" name="PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="143" parent="51" name="URL_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="144" parent="51" name="CONTENT_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="145" parent="51" name="TIME_">
+        <data-type>datetime|0</data-type>
+      </column>
+      <key id="146" parent="51" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="147" parent="52" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="148" parent="52" name="TYPE_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="149" parent="52" name="TIME_">
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="150" parent="52" name="USER_ID_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="151" parent="52" name="TASK_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="152" parent="52" name="PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="153" parent="52" name="ACTION_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="154" parent="52" name="MESSAGE_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="155" parent="52" name="FULL_MSG_">
+        <data-type>longblob|0</data-type>
+      </column>
+      <key id="156" parent="52" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="157" parent="53" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="158" parent="53" name="TYPE_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="159" parent="53" name="PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="160" parent="53" name="EXECUTION_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="161" parent="53" name="TASK_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="162" parent="53" name="ACT_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="163" parent="53" name="NAME_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="164" parent="53" name="VAR_TYPE_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="165" parent="53" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="166" parent="53" name="TIME_">
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="167" parent="53" name="BYTEARRAY_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="168" parent="53" name="DOUBLE_">
+        <data-type>double|0</data-type>
+      </column>
+      <column id="169" parent="53" name="LONG_">
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="170" parent="53" name="TEXT_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="171" parent="53" name="TEXT2_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <index id="172" parent="53" name="ACT_IDX_HI_DETAIL_ACT_INST">
+        <columns>ACT_INST_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="173" parent="53" name="ACT_IDX_HI_DETAIL_NAME">
+        <columns>NAME_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="174" parent="53" name="ACT_IDX_HI_DETAIL_PROC_INST">
+        <columns>PROC_INST_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="175" parent="53" name="ACT_IDX_HI_DETAIL_TASK_ID">
+        <columns>TASK_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="176" parent="53" name="ACT_IDX_HI_DETAIL_TIME">
+        <columns>TIME_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="177" parent="53" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="178" parent="54" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="179" parent="54" name="GROUP_ID_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="180" parent="54" name="TYPE_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="181" parent="54" name="USER_ID_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="182" parent="54" name="TASK_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="183" parent="54" name="PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <index id="184" parent="54" name="ACT_IDX_HI_IDENT_LNK_PROCINST">
+        <columns>PROC_INST_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="185" parent="54" name="ACT_IDX_HI_IDENT_LNK_TASK">
+        <columns>TASK_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="186" parent="54" name="ACT_IDX_HI_IDENT_LNK_USER">
+        <columns>USER_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="187" parent="54" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="188" parent="55" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="189" parent="55" name="PROC_INST_ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="190" parent="55" name="BUSINESS_KEY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="191" parent="55" name="PROC_DEF_ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="192" parent="55" name="START_TIME_">
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="193" parent="55" name="END_TIME_">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="194" parent="55" name="DURATION_">
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="195" parent="55" name="START_USER_ID_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="196" parent="55" name="START_ACT_ID_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="197" parent="55" name="END_ACT_ID_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="198" parent="55" name="SUPER_PROCESS_INSTANCE_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="199" parent="55" name="DELETE_REASON_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="200" parent="55" name="TENANT_ID_">
+        <data-type>varchar(255)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="201" parent="55" name="NAME_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <index id="202" parent="55" name="ACT_IDX_HI_PRO_INST_END">
+        <columns>END_TIME_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="203" parent="55" name="ACT_IDX_HI_PRO_I_BUSKEY">
+        <columns>BUSINESS_KEY_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="204" parent="55" name="PROC_INST_ID_">
+        <columns>PROC_INST_ID_</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="205" parent="55" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <key id="206" parent="55" name="PROC_INST_ID_">
+        <columns>PROC_INST_ID_</columns>
+        <underlying-index>PROC_INST_ID_</underlying-index>
+      </key>
+      <column id="207" parent="56" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="208" parent="56" name="PROC_DEF_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="209" parent="56" name="TASK_DEF_KEY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="210" parent="56" name="PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="211" parent="56" name="EXECUTION_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="212" parent="56" name="NAME_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="213" parent="56" name="PARENT_TASK_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="214" parent="56" name="DESCRIPTION_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="215" parent="56" name="OWNER_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="216" parent="56" name="ASSIGNEE_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="217" parent="56" name="START_TIME_">
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="218" parent="56" name="CLAIM_TIME_">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="219" parent="56" name="END_TIME_">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="220" parent="56" name="DURATION_">
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="221" parent="56" name="DELETE_REASON_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="222" parent="56" name="PRIORITY_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="223" parent="56" name="DUE_DATE_">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="224" parent="56" name="FORM_KEY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="225" parent="56" name="CATEGORY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="226" parent="56" name="TENANT_ID_">
+        <data-type>varchar(255)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <index id="227" parent="56" name="ACT_IDX_HI_TASK_INST_PROCINST">
+        <columns>PROC_INST_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="228" parent="56" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="229" parent="57" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="230" parent="57" name="PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="231" parent="57" name="EXECUTION_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="232" parent="57" name="TASK_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="233" parent="57" name="NAME_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="234" parent="57" name="VAR_TYPE_">
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="235" parent="57" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="236" parent="57" name="BYTEARRAY_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="237" parent="57" name="DOUBLE_">
+        <data-type>double|0</data-type>
+      </column>
+      <column id="238" parent="57" name="LONG_">
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="239" parent="57" name="TEXT_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="240" parent="57" name="TEXT2_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="241" parent="57" name="CREATE_TIME_">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="242" parent="57" name="LAST_UPDATED_TIME_">
+        <data-type>datetime|0</data-type>
+      </column>
+      <index id="243" parent="57" name="ACT_IDX_HI_PROCVAR_NAME_TYPE">
+        <columns>NAME_
+VAR_TYPE_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="244" parent="57" name="ACT_IDX_HI_PROCVAR_PROC_INST">
+        <columns>PROC_INST_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="245" parent="57" name="ACT_IDX_HI_PROCVAR_TASK_ID">
+        <columns>TASK_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="246" parent="57" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="247" parent="58" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="248" parent="58" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="249" parent="58" name="NAME_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="250" parent="58" name="TYPE_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <key id="251" parent="58" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="252" parent="59" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="253" parent="59" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="254" parent="59" name="USER_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="255" parent="59" name="TYPE_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="256" parent="59" name="KEY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="257" parent="59" name="VALUE_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="258" parent="59" name="PASSWORD_">
+        <data-type>longblob|0</data-type>
+      </column>
+      <column id="259" parent="59" name="PARENT_ID_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <key id="260" parent="59" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="261" parent="60" name="USER_ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="262" parent="60" name="GROUP_ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <index id="263" parent="60" name="ACT_FK_MEMB_GROUP">
+        <columns>GROUP_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="264" parent="60" name="PRIMARY">
+        <columns>USER_ID_
+GROUP_ID_</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="265" parent="60" name="act_id_membership_ibfk_1">
+        <columns>USER_ID_</columns>
+        <ref-key>~.act_id_user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="266" parent="60" name="act_id_membership_ibfk_2">
+        <columns>GROUP_ID_</columns>
+        <ref-key>~.act_id_group.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="267" parent="61" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="268" parent="61" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="269" parent="61" name="FIRST_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="270" parent="61" name="LAST_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="271" parent="61" name="EMAIL_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="272" parent="61" name="PWD_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="273" parent="61" name="PICTURE_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <key id="274" parent="61" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="275" parent="62" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="276" parent="62" name="PROC_DEF_ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="277" parent="62" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="278" parent="62" name="INFO_JSON_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <index id="279" parent="62" name="ACT_FK_INFO_JSON_BA">
+        <columns>INFO_JSON_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="280" parent="62" name="ACT_IDX_INFO_PROCDEF">
+        <columns>PROC_DEF_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="281" parent="62" name="ACT_UNIQ_INFO_PROCDEF">
+        <columns>PROC_DEF_ID_</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="282" parent="62" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <key id="283" parent="62" name="ACT_UNIQ_INFO_PROCDEF">
+        <columns>PROC_DEF_ID_</columns>
+        <underlying-index>ACT_UNIQ_INFO_PROCDEF</underlying-index>
+      </key>
+      <foreign-key id="284" parent="62" name="act_procdef_info_ibfk_1">
+        <columns>PROC_DEF_ID_</columns>
+        <ref-key>~.act_re_procdef.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="285" parent="62" name="act_procdef_info_ibfk_2">
+        <columns>INFO_JSON_ID_</columns>
+        <ref-key>~.act_ge_bytearray.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="286" parent="63" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="287" parent="63" name="NAME_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="288" parent="63" name="CATEGORY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="289" parent="63" name="TENANT_ID_">
+        <data-type>varchar(255)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="290" parent="63" name="DEPLOY_TIME_">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <key id="291" parent="63" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <column id="292" parent="64" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="293" parent="64" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="294" parent="64" name="NAME_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="295" parent="64" name="KEY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="296" parent="64" name="CATEGORY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="297" parent="64" name="CREATE_TIME_">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="298" parent="64" name="LAST_UPDATE_TIME_">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="299" parent="64" name="VERSION_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="300" parent="64" name="META_INFO_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="301" parent="64" name="DEPLOYMENT_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="302" parent="64" name="EDITOR_SOURCE_VALUE_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="303" parent="64" name="EDITOR_SOURCE_EXTRA_VALUE_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="304" parent="64" name="TENANT_ID_">
+        <data-type>varchar(255)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <index id="305" parent="64" name="ACT_FK_MODEL_DEPLOYMENT">
+        <columns>DEPLOYMENT_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="306" parent="64" name="ACT_FK_MODEL_SOURCE">
+        <columns>EDITOR_SOURCE_VALUE_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="307" parent="64" name="ACT_FK_MODEL_SOURCE_EXTRA">
+        <columns>EDITOR_SOURCE_EXTRA_VALUE_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="308" parent="64" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="309" parent="64" name="act_re_model_ibfk_1">
+        <columns>DEPLOYMENT_ID_</columns>
+        <ref-key>~.act_re_deployment.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="310" parent="64" name="act_re_model_ibfk_2">
+        <columns>EDITOR_SOURCE_VALUE_ID_</columns>
+        <ref-key>~.act_ge_bytearray.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="311" parent="64" name="act_re_model_ibfk_3">
+        <columns>EDITOR_SOURCE_EXTRA_VALUE_ID_</columns>
+        <ref-key>~.act_ge_bytearray.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="312" parent="65" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="313" parent="65" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="314" parent="65" name="CATEGORY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="315" parent="65" name="NAME_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="316" parent="65" name="KEY_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="317" parent="65" name="VERSION_">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="318" parent="65" name="DEPLOYMENT_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="319" parent="65" name="RESOURCE_NAME_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="320" parent="65" name="DGRM_RESOURCE_NAME_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="321" parent="65" name="DESCRIPTION_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="322" parent="65" name="HAS_START_FORM_KEY_">
+        <data-type>tinyint(4)|0</data-type>
+      </column>
+      <column id="323" parent="65" name="HAS_GRAPHICAL_NOTATION_">
+        <data-type>tinyint(4)|0</data-type>
+      </column>
+      <column id="324" parent="65" name="SUSPENSION_STATE_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="325" parent="65" name="TENANT_ID_">
+        <data-type>varchar(255)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <index id="326" parent="65" name="ACT_UNIQ_PROCDEF">
+        <columns>KEY_
+VERSION_
+TENANT_ID_</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="327" parent="65" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <key id="328" parent="65" name="ACT_UNIQ_PROCDEF">
+        <columns>KEY_
+VERSION_
+TENANT_ID_</columns>
+        <underlying-index>ACT_UNIQ_PROCDEF</underlying-index>
+      </key>
+      <column id="329" parent="66" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="330" parent="66" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="331" parent="66" name="EVENT_TYPE_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="332" parent="66" name="EVENT_NAME_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="333" parent="66" name="EXECUTION_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="334" parent="66" name="PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="335" parent="66" name="ACTIVITY_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="336" parent="66" name="CONFIGURATION_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="337" parent="66" name="CREATED_">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <column id="338" parent="66" name="PROC_DEF_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="339" parent="66" name="TENANT_ID_">
+        <data-type>varchar(255)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <index id="340" parent="66" name="ACT_FK_EVENT_EXEC">
+        <columns>EXECUTION_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="341" parent="66" name="ACT_IDX_EVENT_SUBSCR_CONFIG_">
+        <columns>CONFIGURATION_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="342" parent="66" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="343" parent="66" name="act_ru_event_subscr_ibfk_1">
+        <columns>EXECUTION_ID_</columns>
+        <ref-key>~.act_ru_execution.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="344" parent="67" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="345" parent="67" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="346" parent="67" name="PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="347" parent="67" name="BUSINESS_KEY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="348" parent="67" name="PARENT_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="349" parent="67" name="PROC_DEF_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="350" parent="67" name="SUPER_EXEC_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="351" parent="67" name="ACT_ID_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="352" parent="67" name="IS_ACTIVE_">
+        <data-type>tinyint(4)|0</data-type>
+      </column>
+      <column id="353" parent="67" name="IS_CONCURRENT_">
+        <data-type>tinyint(4)|0</data-type>
+      </column>
+      <column id="354" parent="67" name="IS_SCOPE_">
+        <data-type>tinyint(4)|0</data-type>
+      </column>
+      <column id="355" parent="67" name="IS_EVENT_SCOPE_">
+        <data-type>tinyint(4)|0</data-type>
+      </column>
+      <column id="356" parent="67" name="SUSPENSION_STATE_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="357" parent="67" name="CACHED_ENT_STATE_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="358" parent="67" name="TENANT_ID_">
+        <data-type>varchar(255)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="359" parent="67" name="NAME_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="360" parent="67" name="LOCK_TIME_">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <index id="361" parent="67" name="ACT_FK_EXE_PARENT">
+        <columns>PARENT_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="362" parent="67" name="ACT_FK_EXE_PROCDEF">
+        <columns>PROC_DEF_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="363" parent="67" name="ACT_FK_EXE_PROCINST">
+        <columns>PROC_INST_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="364" parent="67" name="ACT_FK_EXE_SUPER">
+        <columns>SUPER_EXEC_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="365" parent="67" name="ACT_IDX_EXEC_BUSKEY">
+        <columns>BUSINESS_KEY_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="366" parent="67" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="367" parent="67" name="act_ru_execution_ibfk_3">
+        <columns>PROC_INST_ID_</columns>
+        <ref-key>~.act_evt_log.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="368" parent="67" name="act_ru_execution_ibfk_2">
+        <columns>PARENT_ID_</columns>
+        <ref-key>~.act_evt_log.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="369" parent="67" name="act_ru_execution_ibfk_1">
+        <columns>PROC_DEF_ID_</columns>
+        <ref-key>~.act_re_procdef.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="370" parent="67" name="act_ru_execution_ibfk_4">
+        <columns>SUPER_EXEC_</columns>
+        <ref-key>~.act_evt_log.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="371" parent="68" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="372" parent="68" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="373" parent="68" name="GROUP_ID_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="374" parent="68" name="TYPE_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="375" parent="68" name="USER_ID_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="376" parent="68" name="TASK_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="377" parent="68" name="PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="378" parent="68" name="PROC_DEF_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <index id="379" parent="68" name="ACT_FK_IDL_PROCINST">
+        <columns>PROC_INST_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="380" parent="68" name="ACT_FK_TSKASS_TASK">
+        <columns>TASK_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="381" parent="68" name="ACT_IDX_ATHRZ_PROCEDEF">
+        <columns>PROC_DEF_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="382" parent="68" name="ACT_IDX_IDENT_LNK_GROUP">
+        <columns>GROUP_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="383" parent="68" name="ACT_IDX_IDENT_LNK_USER">
+        <columns>USER_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="384" parent="68" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="385" parent="68" name="act_ru_identitylink_ibfk_3">
+        <columns>TASK_ID_</columns>
+        <ref-key>~.act_ru_task.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="386" parent="68" name="act_ru_identitylink_ibfk_1">
+        <columns>PROC_INST_ID_</columns>
+        <ref-key>~.act_ru_execution.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="387" parent="68" name="act_ru_identitylink_ibfk_2">
+        <columns>PROC_DEF_ID_</columns>
+        <ref-key>~.act_re_procdef.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="388" parent="69" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="389" parent="69" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="390" parent="69" name="TYPE_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="391" parent="69" name="LOCK_EXP_TIME_">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="392" parent="69" name="LOCK_OWNER_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="393" parent="69" name="EXCLUSIVE_">
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="394" parent="69" name="EXECUTION_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="395" parent="69" name="PROCESS_INSTANCE_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="396" parent="69" name="PROC_DEF_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="397" parent="69" name="RETRIES_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="398" parent="69" name="EXCEPTION_STACK_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="399" parent="69" name="EXCEPTION_MSG_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="400" parent="69" name="DUEDATE_">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="401" parent="69" name="REPEAT_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="402" parent="69" name="HANDLER_TYPE_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="403" parent="69" name="HANDLER_CFG_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="404" parent="69" name="TENANT_ID_">
+        <data-type>varchar(255)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <index id="405" parent="69" name="ACT_FK_JOB_EXCEPTION">
+        <columns>EXCEPTION_STACK_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="406" parent="69" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="407" parent="69" name="act_ru_job_ibfk_1">
+        <columns>EXCEPTION_STACK_ID_</columns>
+        <ref-key>~.act_ge_bytearray.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="408" parent="70" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="409" parent="70" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="410" parent="70" name="EXECUTION_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="411" parent="70" name="PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="412" parent="70" name="PROC_DEF_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="413" parent="70" name="NAME_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="414" parent="70" name="PARENT_TASK_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="415" parent="70" name="DESCRIPTION_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="416" parent="70" name="TASK_DEF_KEY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="417" parent="70" name="OWNER_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="418" parent="70" name="ASSIGNEE_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="419" parent="70" name="DELEGATION_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="420" parent="70" name="PRIORITY_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="421" parent="70" name="CREATE_TIME_">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="422" parent="70" name="DUE_DATE_">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="423" parent="70" name="CATEGORY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="424" parent="70" name="SUSPENSION_STATE_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="425" parent="70" name="TENANT_ID_">
+        <data-type>varchar(255)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="426" parent="70" name="FORM_KEY_">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <index id="427" parent="70" name="ACT_FK_TASK_EXE">
+        <columns>EXECUTION_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="428" parent="70" name="ACT_FK_TASK_PROCDEF">
+        <columns>PROC_DEF_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="429" parent="70" name="ACT_FK_TASK_PROCINST">
+        <columns>PROC_INST_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="430" parent="70" name="ACT_IDX_TASK_CREATE">
+        <columns>CREATE_TIME_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="431" parent="70" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="432" parent="70" name="act_ru_task_ibfk_2">
+        <columns>EXECUTION_ID_</columns>
+        <ref-key>~.act_ru_execution.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="433" parent="70" name="act_ru_task_ibfk_3">
+        <columns>PROC_INST_ID_</columns>
+        <ref-key>~.act_ru_execution.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="434" parent="70" name="act_ru_task_ibfk_1">
+        <columns>PROC_DEF_ID_</columns>
+        <ref-key>~.act_re_procdef.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="435" parent="71" name="ID_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="436" parent="71" name="REV_">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="437" parent="71" name="TYPE_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="438" parent="71" name="NAME_">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="439" parent="71" name="EXECUTION_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="440" parent="71" name="PROC_INST_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="441" parent="71" name="TASK_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="442" parent="71" name="BYTEARRAY_ID_">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="443" parent="71" name="DOUBLE_">
+        <data-type>double|0</data-type>
+      </column>
+      <column id="444" parent="71" name="LONG_">
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="445" parent="71" name="TEXT_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <column id="446" parent="71" name="TEXT2_">
+        <data-type>varchar(4000)|0</data-type>
+      </column>
+      <index id="447" parent="71" name="ACT_FK_VAR_BYTEARRAY">
+        <columns>BYTEARRAY_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="448" parent="71" name="ACT_FK_VAR_EXE">
+        <columns>EXECUTION_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="449" parent="71" name="ACT_FK_VAR_PROCINST">
+        <columns>PROC_INST_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="450" parent="71" name="ACT_IDX_VARIABLE_TASK_ID">
+        <columns>TASK_ID_</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="451" parent="71" name="PRIMARY">
+        <columns>ID_</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="452" parent="71" name="act_ru_variable_ibfk_2">
+        <columns>EXECUTION_ID_</columns>
+        <ref-key>~.act_ru_execution.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="453" parent="71" name="act_ru_variable_ibfk_3">
+        <columns>PROC_INST_ID_</columns>
+        <ref-key>~.act_ru_execution.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="454" parent="71" name="act_ru_variable_ibfk_1">
+        <columns>BYTEARRAY_ID_</columns>
+        <ref-key>~.act_ge_bytearray.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="455" parent="72" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="456" parent="72" name="user_id">
+        <comment>申请人id</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="457" parent="72" name="org_id">
+        <comment>申请人部门</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="458" parent="72" name="deployment_id">
+        <comment>流程id</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="459" parent="72" name="purpose">
+        <comment>用途</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="460" parent="72" name="buyer_id">
+        <comment>采购专员id</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="461" parent="72" name="title">
+        <comment>标题</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="462" parent="72" name="reason">
+        <comment>申请理由</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="463" parent="72" name="remarks">
+        <comment>备注</comment>
+        <data-type>varchar(500)|0</data-type>
+      </column>
+      <column id="464" parent="72" name="status">
+        <comment>审批状态 0 未发起 1 待审核,2.驳回,3.同意,4.询价中,5. 审核结束(待放款) 6.已放款 7.采购完成</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="465" parent="72" name="create_by">
+        <comment>创建者</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="466" parent="72" name="create_date">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="467" parent="72" name="update_by">
+        <comment>更新者</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="468" parent="72" name="update_date">
+        <comment>更新时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="469" parent="72" name="delete_flag">
+        <comment>&apos;删除标记(0默认未删除，1删除)&apos;,</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(2)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="470" parent="72" name="expect_date">
+        <comment>期望交付日期</comment>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="471" parent="72" name="before_total_price">
+        <comment>询价前总价</comment>
+        <data-type>decimal(10,2)|0</data-type>
+      </column>
+      <column id="472" parent="72" name="after_total_price">
+        <comment>询价后总价</comment>
+        <data-type>decimal(10,2)|0</data-type>
+      </column>
+      <column id="473" parent="72" name="assignee">
+        <comment>当前审批人</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="474" parent="72" name="inventory_status">
+        <comment>库存状态 0,库存不足1,库存充足</comment>
+        <data-type>int(20)|0</data-type>
+      </column>
+      <column id="475" parent="72" name="channels">
+        <comment>采购渠道</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="476" parent="72" name="payment">
+        <comment>支付方式</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <key id="477" parent="72" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="478" parent="73" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="479" parent="73" name="category_id">
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="480" parent="73" name="classify_id">
+        <comment>采购物品分类ID</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="481" parent="73" name="Item_name">
+        <comment>采购物品名称</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="482" parent="73" name="needcount">
+        <comment>需求数量</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="483" parent="73" name="count">
+        <comment>采购数量</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="484" parent="73" name="stock">
+        <comment>库存量</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="485" parent="73" name="model">
+        <comment>型号规格</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="486" parent="73" name="apply_price">
+        <comment>申请单价</comment>
+        <data-type>decimal(10,2)|0</data-type>
+      </column>
+      <column id="487" parent="73" name="actual_price">
+        <comment>实际单价</comment>
+        <data-type>decimal(10,2)|0</data-type>
+      </column>
+      <column id="488" parent="73" name="item_remarks">
+        <comment>表单项备注</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="489" parent="73" name="delete_flag">
+        <comment>&apos;删除标记(0默认未删除，1删除)&apos;,</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(2)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="490" parent="73" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="491" parent="74" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="492" parent="74" name="name">
+        <comment>流程分类的名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="493" parent="74" name="create_by">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="494" parent="74" name="create_date">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="495" parent="74" name="update_by">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="496" parent="74" name="update_date">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="497" parent="74" name="table_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <key id="498" parent="74" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="499" parent="75" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="500" parent="75" name="category_name">
+        <comment>流程表单名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(80)|0</data-type>
+      </column>
+      <column id="501" parent="75" name="categoryid">
+        <comment>分类ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <key id="502" parent="75" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="503" parent="76" name="id">
+        <comment>编号</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="504" parent="76" name="name">
+        <comment>分类名称</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="505" parent="76" name="create_by">
+        <comment>创建者</comment>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="506" parent="76" name="create_date">
+        <comment>创建时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="507" parent="76" name="update_by">
+        <comment>更新者</comment>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="508" parent="76" name="update_date">
+        <comment>更新时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="509" parent="76" name="del_flag">
+        <comment>删除标记(0默认未删除，1删除)</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(5)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="510" parent="76" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="511" parent="77" name="id">
+        <comment>编号</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="512" parent="77" name="category_id">
+        <comment>流程表单ID</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="513" parent="77" name="recipient">
+        <comment>接收者</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="514" parent="77" name="sender">
+        <comment>发送人</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="515" parent="77" name="title">
+        <comment>消息标题</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="516" parent="77" name="content">
+        <comment>内容</comment>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="517" parent="77" name="create_by">
+        <comment>创建者</comment>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="518" parent="77" name="create_date">
+        <comment>创建时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="519" parent="77" name="update_by">
+        <comment>更新者</comment>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="520" parent="77" name="update_date">
+        <comment>更新时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="521" parent="77" name="del_flag">
+        <comment>删除标记(0默认未删除，1删除)</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(5)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="522" parent="77" name="status">
+        <comment>状态 0,未读,1已读</comment>
+        <data-type>int(5)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="523" parent="77" name="type">
+        <comment>0,流程消息1.系统消息</comment>
+        <data-type>int(5)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="524" parent="77" name="send_time">
+        <comment>发送时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <key id="525" parent="77" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="526" parent="78" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="527" parent="78" name="parent_id">
+        <comment>父ID</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="528" parent="78" name="org_code">
+        <comment>组织机构代码</comment>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="529" parent="78" name="org_name">
+        <comment>组织机构名称</comment>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="530" parent="78" name="description">
+        <comment>描述</comment>
+        <data-type>varchar(500)|0</data-type>
+      </column>
+      <column id="531" parent="78" name="status">
+        <comment>状态：1新建、2激活、3隐藏</comment>
+        <data-type>int(1)|0</data-type>
+      </column>
+      <column id="532" parent="78" name="del_flag">
+        <comment>删除状态(0默认未删除，1删除)</comment>
+        <data-type>int(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="533" parent="78" name="create_by">
+        <comment>创建人</comment>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="534" parent="78" name="create_date">
+        <comment>创建时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="535" parent="78" name="update_by">
+        <comment>修改人</comment>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="536" parent="78" name="update_date">
+        <comment>修改时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <key id="537" parent="78" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="538" parent="79" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="539" parent="79" name="parent_id">
+        <comment>上级职位ID</comment>
+        <data-type>bigint(20)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="540" parent="79" name="name">
+        <comment>职位名称</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="541" parent="79" name="create_by">
+        <comment>创建人</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="542" parent="79" name="create_date">
+        <comment>创建时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="543" parent="79" name="update_by">
+        <comment>修改人</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="544" parent="79" name="update_date">
+        <comment>修改时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="545" parent="79" name="del_flag">
+        <comment>删除标记(0默认未删除，1删除)</comment>
+        <data-type>int(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="546" parent="79" name="is_leader">
+        <comment>0不是领导 1.领导</comment>
+        <data-type>int(2)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="547" parent="79" name="level">
+        <comment>职位等级</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <key id="548" parent="79" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="549" parent="80" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="550" parent="80" name="position_id">
+        <comment>职位ID</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="551" parent="80" name="org_id">
+        <comment>组织架构ID</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="552" parent="80" name="del_flag">
+        <comment>删除标记(0默认未删除，1删除)</comment>
+        <data-type>int(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="553" parent="80" name="user_id">
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <key id="554" parent="80" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="555" parent="81" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="556" parent="81" name="position_organization_id">
+        <comment>组织机构和职位关联ID</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="557" parent="81" name="user_id">
+        <comment>用户ID</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="558" parent="81" name="leader_id">
+        <comment>上级领导ID</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <key id="559" parent="81" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="560" parent="82" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="561" parent="82" name="org_id">
+        <comment>组织机构</comment>
+        <data-type>bigint(20)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="562" parent="82" name="position_id">
+        <comment>职位</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="563" parent="82" name="task_name">
+        <comment>任务名称(和流程图中框中名称保持一致)</comment>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="564" parent="82" name="process_key">
+        <comment>流程定义key</comment>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="565" parent="82" name="branch_variable">
+        <comment>分支变量 用于存储一个审批人有多个上级审批人时用流程变量和次变量比较来确定是哪个人事下个审批人</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="566" parent="82" name="create_by">
+        <comment>创建人</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="567" parent="82" name="create_date">
+        <comment>创建时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="568" parent="82" name="update_by">
+        <comment>修改人</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="569" parent="82" name="update_date">
+        <comment>修改时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="570" parent="82" name="del_flag">
+        <comment>删除标记(0默认未删除，1删除)</comment>
+        <data-type>int(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="571" parent="82" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="572" parent="83" name="id">
+        <comment>编号</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="573" parent="83" name="parent_id">
+        <comment>父级编号</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="574" parent="83" name="parent_ids">
+        <comment>所有父级编号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(2000)|0</data-type>
+      </column>
+      <column id="575" parent="83" name="name">
+        <comment>名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="576" parent="83" name="sort">
+        <comment>排序</comment>
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="577" parent="83" name="href">
+        <comment>链接</comment>
+        <data-type>varchar(2000)|0</data-type>
+      </column>
+      <column id="578" parent="83" name="target">
+        <comment>目标</comment>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="579" parent="83" name="icon">
+        <comment>图标</comment>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="580" parent="83" name="is_show">
+        <comment>是否在菜单中显示(0默认不显示，1显示)</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(5)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="581" parent="83" name="permission">
+        <comment>权限标识</comment>
+        <data-type>varchar(200)|0</data-type>
+      </column>
+      <column id="582" parent="83" name="create_by">
+        <comment>创建者</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="583" parent="83" name="create_date">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="584" parent="83" name="update_by">
+        <comment>更新者</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="585" parent="83" name="update_date">
+        <comment>更新时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="586" parent="83" name="remarks">
+        <comment>备注信息</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="587" parent="83" name="log_flag">
+        <comment>是否记录日志标记(0默认不记录，1记录)</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(5)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="588" parent="83" name="del_flag">
+        <comment>删除标记(0默认未删除，1删除)</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(5)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="589" parent="83" name="type">
+        <comment>0,web系统菜单 1.APP菜单</comment>
+        <data-type>int(5)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="590" parent="83" name="img_url">
+        <comment>图片URL</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <index id="591" parent="83" name="sys_menu_del_flag">
+        <columns>del_flag</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="592" parent="83" name="sys_menu_parent_id">
+        <columns>parent_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="593" parent="83" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="594" parent="84" name="id">
+        <comment>编号</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="595" parent="84" name="name">
+        <comment>角色名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="596" parent="84" name="enname">
+        <comment>英文名称</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="597" parent="84" name="del_flag">
+        <comment>删除标记(0默认未删除，1删除)</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(5)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="598" parent="84" name="remarks">
+        <comment>备注信息</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="599" parent="84" name="create_by">
+        <comment>创建者</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="600" parent="84" name="create_date">
+        <comment>创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="601" parent="84" name="update_by">
+        <comment>更新者</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="602" parent="84" name="update_date">
+        <comment>更新时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <index id="603" parent="84" name="sys_role_del_flag">
+        <columns>del_flag</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="604" parent="84" name="sys_role_enname">
+        <columns>enname</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="605" parent="84" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="606" parent="85" name="id">
+        <comment>主键</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="607" parent="85" name="role_id">
+        <comment>角色编号</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="608" parent="85" name="menu_id">
+        <comment>菜单编号</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="609" parent="85" name="del_flag">
+        <comment>删除标记(0默认未删除，1删除)</comment>
+        <data-type>int(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="610" parent="85" name="sys_role_menu_index">
+        <columns>role_id
+menu_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="611" parent="85" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="612" parent="85" name="sys_role_menu_index">
+        <columns>role_id
+menu_id</columns>
+        <underlying-index>sys_role_menu_index</underlying-index>
+      </key>
+      <column id="613" parent="86" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="614" parent="86" name="org_id">
+        <comment>组织机构ID</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="615" parent="86" name="user_name">
+        <comment>用户名</comment>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="616" parent="86" name="password">
+        <comment>用户密码</comment>
+        <data-type>varchar(32)|0</data-type>
+      </column>
+      <column id="617" parent="86" name="salt">
+        <comment>盐值</comment>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="618" parent="86" name="real_name">
+        <comment>真实姓名</comment>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="619" parent="86" name="nick_name">
+        <comment>昵称</comment>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="620" parent="86" name="description">
+        <comment>备注</comment>
+        <data-type>varchar(1500)|0</data-type>
+      </column>
+      <column id="621" parent="86" name="link_phone">
+        <comment>联系电话</comment>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="622" parent="86" name="address">
+        <comment>办公地点</comment>
+        <data-type>varchar(200)|0</data-type>
+      </column>
+      <column id="623" parent="86" name="telephone">
+        <comment>座机</comment>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="624" parent="86" name="email">
+        <comment>邮箱</comment>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="625" parent="86" name="profession">
+        <comment>职业：1老师，后续待扩展</comment>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="626" parent="86" name="status">
+        <comment>状态：1新建、2激活、3隐藏</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="627" parent="86" name="lock_status">
+        <comment>锁定状态0未锁定，1已锁定</comment>
+        <data-type>int(1)|0</data-type>
+      </column>
+      <column id="628" parent="86" name="delete_flag">
+        <comment>删除状态0未删除，1，已删除</comment>
+        <data-type>int(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="629" parent="86" name="create_by">
+        <comment>创建人</comment>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="630" parent="86" name="create_date">
+        <comment>创建时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="631" parent="86" name="update_by">
+        <comment>修改人</comment>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="632" parent="86" name="update_date">
+        <comment>修改时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="633" parent="86" name="sortLetters">
+        <comment>拼音排序</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="634" parent="86" name="py_name">
+        <comment>姓名全拼</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="635" parent="86" name="birthday">
+        <comment>生日</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="636" parent="86" name="entry_date">
+        <comment>入职日期</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="637" parent="86" name="img_url">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="638" parent="86" name="gender">
+        <comment>1,男,2,女</comment>
+        <data-type>int(2)|0</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <key id="639" parent="86" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="640" parent="87" name="id">
+        <comment>主键</comment>
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="641" parent="87" name="user_id">
+        <comment>用户编号</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="642" parent="87" name="role_id">
+        <comment>角色编号</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="643" parent="87" name="delete_flag">
+        <comment>删除标记(0默认未删除，1删除)</comment>
+        <data-type>int(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="644" parent="87" name="sys_user_role_index">
+        <columns>user_id
+role_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="645" parent="87" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="646" parent="87" name="sys_user_role_index">
+        <columns>user_id
+role_id</columns>
+        <underlying-index>sys_user_role_index</underlying-index>
+      </key>
+      <column id="647" parent="88" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="648" parent="88" name="user_id">
+        <comment>用户id</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="649" parent="88" name="org_id">
+        <comment>组织机构id</comment>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="650" parent="88" name="is_manager">
+        <comment>是否负责人0否1是</comment>
+        <data-type>int(1)|0</data-type>
+      </column>
+      <column id="651" parent="88" name="create_by">
+        <comment>创建人</comment>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="652" parent="88" name="create_date">
+        <comment>创建时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="653" parent="88" name="update_by">
+        <comment>修改人</comment>
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="654" parent="88" name="update_date">
+        <comment>修改时间</comment>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="655" parent="88" name="delete_flag">
+        <comment>删除标记(0默认未删除，1删除)</comment>
+        <data-type>int(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="656" parent="88" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="657" parent="89" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="658" parent="89" name="f_PY">
+        <data-type>char(1)|0</data-type>
+      </column>
+      <column id="659" parent="89" name="cBegin">
+        <mandatory>1</mandatory>
+        <data-type>smallint(5) unsigned|0</data-type>
+      </column>
+      <column id="660" parent="89" name="cEnd">
+        <mandatory>1</mandatory>
+        <data-type>smallint(5) unsigned|0</data-type>
+      </column>
+      <key id="661" parent="89" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

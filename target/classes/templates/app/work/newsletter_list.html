@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../static/common/css/common.css"/>
+    <script src="../static/common/js/sea.js"></script>
+</head>
+<body>
+<style>
+    .content{background: #fff;}
+    .content_nav_list{border-bottom: 1px solid #ededed;}
+    .content_nav_list li{border-bottom: 1px solid #ededed;display: -webkit-box;padding: 0.5rem 4%;position: relative;width: 92%;}
+    .content_nav_list li:last-child{border: none;}
+    .content_nav_list li>div:first-child{width: 5.53rem;height: 4.6rem;display: -webkit-box;-webkit-box-pack: center;-webkit-box-align: center; position: relative;}
+    .content_nav_list .info{padding-left: 1rem; box-sizing: border-box;width: -webkit-calc(100% - 5.53rem);}
+    .info>p:first-child{ font-size: 1rem;  }
+    .info>p:last-child{ margin-top: 2rem; text-align: right; font-size: 0.8rem; color: #B7B7B7}
+</style>
+<div class="page">
+    <div class="content">
+        <ul class="content_nav_list">
+            <li>
+                <div >
+                    <img src="../static/common/img/dongao_1.png"/>
+                </div>
+                <div class="info">
+                    <p>东奥OA使用说明</p>
+                    <p>
+                        <span>16:30</span>
+                        &nbsp;
+                        <span>产品部</span>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="../static/common/img/dongao_2.png"/>
+                </div>
+                <div class="info">
+                    <p>东奥OA用户体验提升意见征集</p>
+                    <p>
+                        <span>2016-09-10</span>
+                        &nbsp;
+                        <span>人事部</span>
+                    </p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<script>
+    seajs.use('newsletter_list',function(index){
+        index.init();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../static/common/css/common.css"/>
+    <script src="../static/common/js/sea.js"></script>
+</head>
+<body>
+<style>
+    .group{ padding: 0.4rem 0 0.4rem 1rem; color: #4B4B4C; font-size: 0.8rem}
+    .name{padding: 0.6rem 0 0.6rem 1rem; border-top: 1px solid #F0F0F0; background: #fff;}
+    .box .name:last-child{ border-bottom: 1px solid #F0F0F0;}
+    .word .name{overflow: hidden;}
+    .word .group{font-size: 1.2rem}
+    .content {position: relative;}
+    .photo{display: inline-block;width: 2.6rem; height: 2.6rem; border-radius: 50%; vertical-align: middle;}
+    .txt{display: inline-block; margin-left: 1rem; color: #444444; font-size: 1rem; vertical-align: middle}
+    /*顶部搜索栏*/
+    .search_input { width: 100%; height: 2.8rem; padding: 0.5rem 0; box-sizing: border-box; background: #fff ; position: relative;overflow: hidden;}
+
+    .search_input input::-webkit-input-placeholder{padding-left: 1.5rem;}
+
+    .search_input>p{ display: inline-block; position: absolute; top: 12px; left: 50%;margin-left: -1.5rem;}
+    .search_input>p>span{ display: block; position: absolute}
+    .search .circle_t { width: 10px; height: 10px; border-radius: 50%; border: 1px solid #97979C; top: 4px; left: 0; }
+    .search .circle_b { width: 1px; height: 8px; background: #97979C; top: 12px; left: 12px; transform: rotate(-47deg)}
+
+    .search_input>input { width: 100%; height: 100%; background: #F2F2F8; border: none;  border-radius: 6px; box-sizing: border-box;text-align: center;}
+
+    .search .search_text {float: right;text-align: right;color: #A0A0A4; width: 2.9rem; height: 100%; padding: 0.75rem 0;box-sizing: border-box; display: none;}
+    .search{ width: 94%; padding: 0 3%; background: #fff; height: 2.8rem;}
+    .search>div {float: left}
+    /*.search>.arrow {padding: 0.75rem; position: relative; width: 12%; height: 100%; box-sizing: border-box; overflow: hidden; display: none; margin-right: 12px}*/
+    .search>.arrow {padding: 0.75rem; position: relative; width: 3rem; height: 100%; box-sizing: border-box; overflow: hidden; display: none;}
+    .search>.arrow>span{ display: block; background: #018BDA; width: 3px; height: 12px; position: absolute; }
+    .search>.arrow>span:first-child{  transform: rotate( 45deg); top:10px; left: 13px;height: 14px;}
+    .search>.arrow>span:nth-child(2){width: 18px; height: 3px;left: 12px; top: 19px }
+    .search>.arrow>span:last-child{ transform: rotate( -45deg); top:20px; left: 14px }
+    /*获取焦点时的状态*/
+    .search_focus>.search_input{width: 72%;width: -webkit-calc(100% - 6rem);}
+    .search_focus>.search_input>p{left:2rem;}
+    .search_focus>.search_input>input{padding-left: 2rem;text-align: left;}
+    .search_focus>.arrow{display: block;}
+    .search_focus>.search_text{display: block;}
+    .search_focus input::-webkit-input-placeholder{padding-left: 0;}
+
+    /*按字母或者部门搜索*/
+    .sort { border-top: 1px solid #F0F0F0; background: #fff; padding: 0.75rem 0}
+    .sort>div { float: left; width: 50%; padding: 0.5rem 0;box-sizing: border-box; position: relative;}
+    .sort>div:first-child {  border-right: 1px solid #F0F0F0;}
+    .sort>div>span{ display: block; width: 100%; text-align: center;}
+    .current .line { position: absolute; bottom: -12px; border-bottom: 2px solid #409CDF; width: 80%; margin: 0 10%}
+    .list{position: relative; width: 100%; overflow: hidden}
+    .list>div { display: none; }
+    .list>.selected { display: block}
+    .depart>.wrap { background: #fff;}
+    .depart>.wrap>.title { text-align: center; border-top: 1px solid #F0F0F0; padding: 1rem 0 }
+    .wrap>ul{ display: none; }
+    .nows>ul{ display: block}
+    /*右侧字母*/
+    .wordList{width: 0.8rem; position: fixed;right: 0.6rem; top: 11.2rem; cursor: pointer; font-size: x-small;text-align: center;}
+    /*点击事件*/
+    /*点击搜索，弹出内容*/
+    .search_border{ margin: 0 auto; background: pink; width: 70%; }
+    .search_border>li{ padding: 1rem 0; border-bottom: 1px solid #E1E1E1;}
+
+</style>
+<div class="page">
+    <div class="content">
+        <!--顶部搜索栏-->
+        <div class="search clerafix">
+            <!--左侧箭头-->
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!--搜索输入框-->
+            <div class="search_input clerafix">
+                <p>
+                    <span class="circle_t"></span>
+                    <span class="circle_b"></span>
+                </p>
+                <input type="text" placeholder="搜索">
+            </div>
+            <!--搜索-->
+            <div class="search_text">搜索</div>
+        </div>
+        <!--按类排序-->
+        <div class="sort clerafix">
+            <div class="current">
+                <span>按字母</span>
+                <span class="line"></span>
+            </div>
+            <div>
+                <span>按部门</span>
+                <span class="line"></span>
+            </div>
+        </div>
+        <div class="list">
+            <!--按字母-->
+            <div class="word selected">
+                <div class="box"></div>
+                <!--右侧字母-->
+                <div class="wordList">
+                    <ul>
+                        <li>A</li>
+                        <li>B</li>
+                        <li>C</li>
+                        <li>D</li>
+                        <li>E</li>
+                        <li>F</li>
+                        <li>G</li>
+                        <li>H</li>
+                        <li>J</li>
+                        <li>K</li>
+                        <li>L</li>
+                        <li>M</li>
+                        <li>N</li>
+                        <li>O</li>
+                        <li>P</li>
+                        <li>Q</li>
+                        <li>R</li>
+                        <li>T</li>
+                        <li>W</li>
+                        <li>X</li>
+                        <li>Y</li>
+                        <li>Z</li>
+                        <li>#</li>
+                    </ul>
+                </div>
+            </div>
+            <!--按部门-->
+            <div class="depart"></div>
+        </div>
+    </div>
+</div>
+<script>
+    seajs.use('tell_index',function(index){
+        index.init();
+    });
+</script>
+</body>
+</html>

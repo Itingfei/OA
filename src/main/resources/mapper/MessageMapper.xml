@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongao.oa.dao.MessageMapper">
+  <resultMap id="BaseResultMap" type="com.dongao.oa.pojo.Message">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="category_id" jdbcType="BIGINT" property="categoryId" />
+    <result column="recipient" jdbcType="BIGINT" property="recipient" />
+    <result column="sender" jdbcType="BIGINT" property="sender" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="send_time" jdbcType="TIMESTAMP" property="sendTime" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="del_flag" jdbcType="INTEGER" property="delFlag" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <select id="selectByCondition" parameterType="java.util.Map" resultType="java.util.Map">
+    SELECT
+    mess.*, c.title AS ctitle,mess.recipient,ru.real_name AS recipientName,su.real_name AS senderName,
+    c.`status` AS cstatus
+    FROM
+    da_oa_message mess
+    LEFT JOIN da_category c ON mess.category_id = c.id AND c.delete_flag = 0
+    LEFT JOIN da_oa_sys_user ru ON mess.recipient = ru.id AND ru.delete_flag = 0
+    LEFT JOIN da_oa_sys_user su ON mess.sender = su.id AND su.delete_flag = 0
+    WHERE mess.del_flag = 0
+    <if test="title!= null and title !=''" >
+      and mess.title like CONCAT('%',#{title},'%' )
+    </if>
+    <if test="recipient!= null" >
+      and mess.recipient = #{recipient}
+    </if>
+    <if test="status!= null" >
+      and mess.status = #{status}
+    </if>
+    <if test="startCreateDate!= null" >
+      and mess.create_date &gt;= #{startCreateDate}
+    </if>
+    <if test="type!= null" >
+      and mess.type = #{type}
+    </if>
+    <if test="endCreateDate!= null" >
+      and mess.create_date &lt;= #{endCreateDate}
+    </if>
+  </select>
+</mapper>

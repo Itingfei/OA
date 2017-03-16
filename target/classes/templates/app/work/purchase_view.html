@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../static/common/css/common.css"/>
+    <script src="../static/common/js/sea.js"></script>
+</head>
+<body>
+<style>
+    /*头像部分*/
+    .content_title{width: 96%;padding-left: 4%;background: #fff;}
+    .content_title_info{border-bottom: 1px solid #ededed;padding: 1rem 0;}
+    .content_title>li{padding-top: 0.8rem;}
+    .content_title>li:last-child{padding-bottom: 0.8rem;}
+    .content_title>li>span:first-child{color:#666;font-size: 1rem;}
+    .content_title>li>span:last-child{color:#333;font-size: 1rem;}
+    .user_icon{width: 4.5rem;display:block;height: 4.5rem;border-radius: 50%;float: left;}
+    .purchase_proc{float: left;margin: 0.7rem 0 0 1rem;}
+    .purchase_proc>span{display: block;font-size: 1.1rem;}
+    .purchase_proc>span:first-child{color:#1a1a1a;}
+    .purchase_proc>span:last-child{color:#666;font-size: 1rem;}
+    .mt1{margin-top: 1rem;}
+    .b_n{border-bottom: none!important;}
+    /*提交按钮*/
+    .btn_submit{background: #018bda;text-align: center;font-size: 1rem;color:#fff;padding:1rem 0;position: fixed;left: 0;bottom: 0;width: 100%;display: -webkit-box;z-index: 2;}
+    .btn_submit_two{padding:0;}
+    .btn_submit>span{-webkit-box-flex: 1;display: block;text-align: center;}
+    /*.btn_submit>span:first-child{background: #f9f9f9;color: #333;padding:1rem 0; }*/
+    /*修改*/
+    .btn_submit>span:first-child{padding:1rem 0; background: #F9F9F9; color: #000; border-top: 1px solid #E4E4E4; border-bottom: 1px solid #E4E4E4; }
+    .btn_submit>span:last-child{padding:1rem 0; }
+    /* 询价前*/
+    .border{border-bottom: 1px solid #ededed;}
+    .purchase_price_before{padding: 1rem 4%;;background: #fff;width: 92%;}
+    .purchase_price_before>span:first-child{color:#333;float: left;}
+    .purchase_price_before>span:last-child{color:#f66627;float: right;}
+    /*列表*/
+    .content_purchase_list{width: 100%;background: #fff;}
+    .content_purchase_list>li{width: 100%;}
+    .content_purchase_list>li>div{border-bottom: 1px solid #ededed;padding:1rem 4% 1rem 0;width: 92%;margin-left: 4%;}
+    .content_purchase_list>li>div:first-child>i{display:block;width: 0px;height: 0px;border: 0.4rem solid transparent;border-left-color: #999;float: left;margin-top: 0.25rem;}
+    .content_purchase_list>li>div:first-child>p{margin-left: 0.5rem;float: left;color:#333;max-width: -webkit-calc(100% - 55px);overflow: hidden;white-space:nowrap; text-overflow:ellipsis;}
+    .content_purchase_list>li>div:first-child>span{color:#999;float: right;}
+    /*详情*/
+    .content_purchase_detail{background: #f9f9f9;font-size: 0.9rem;width: 92%;padding: 0 4%;}
+    .content_purchase_detail>li{padding-top: 0.6rem;}
+    .content_purchase_detail>li:last-child{padding-bottom: 0.6rem;}
+    .content_purchase_detail>li>span:first-child{color:#666;}
+    .content_purchase_detail>li>span:last-child{color:#333;}
+    /*进度*/
+    .content_purchase_progress{background: #fff;width: 85%;padding-left: 15%;border-bottom: 1px solid #ededed;}
+    .content_purchase_progress>li{color:#666;font-size: 1rem;padding: 1rem 5% 1rem 0;width: 95%;border-bottom: 1px solid #ededed;position: relative;}
+    .content_purchase_progress>li:before{content: "";display: block;width: 0.5rem;height: 0.5rem;background: #d8d8d8;position: absolute;border-radius: 50%;left: -10%;top:1.4rem;}
+    .content_purchase_progress>li:first-child:before{width: 0.8rem;height:0.8rem;background: #018bda;-webkit-box-shadow:0px 0px 0.1rem 5px #bfe2f6;top:1.2rem;margin-left: -0.13rem;z-index: 1;}
+    .content_purchase_progress>li:after{content: "";display: block;width: 1px;border: none;height: 5.2rem;background: #d8d8d8;position: absolute;left: -10%;top:0;margin-left: 0.25rem;}
+    .content_purchase_progress>li:first-child:after{top:1.4rem;height: 3.8rem;}
+    .content_purchase_progress>li:last-child:after{height: 1.4rem;}
+    .content_purchase_progress>li:first-child{color:#018bda;}
+    .content_purchase_progress>li:last-child{border: none;}
+    .content_purchase_progress>li>p:first-child{}
+    .content_purchase_progress>li>p:first-child>span:first-child{float: left;}
+    .content_purchase_progress>li>p:first-child>span:last-child{float: right;font-size: 0.8rem;}
+    .content_purchase_progress>li>p:last-child{font-size: 0.8rem;margin-top: 0.5rem;}
+</style>
+<div class="page">
+    <div class="content">
+        <ul class="content_title">
+            <li class="clerafix content_title_info">
+                <p class="user_icon">
+                    <img src="../static/common/img/user_icon.png"/>
+                </p>
+                <p class="purchase_proc">
+                    <span></span>
+                    <!--<span>等待吴基术审批</span>-->
+                </p>
+            </li>
+            <!--<li>-->
+                <!--<span>审批编号：</span>-->
+                <!--<span>201607030211</span>-->
+            <!--</li>-->
+            <li>
+                <span>所在部门：</span>
+                <span></span>
+            </li>
+            <li>
+                <span>申请理由：</span>
+                <span></span>
+            </li>
+            <li>
+                <span>期望交付日期：</span>
+                <span></span>
+            </li>
+        </ul>
+        <p class="clerafix purchase_price_before border mt1">
+            <span>询价前</span>
+            <span class="info_right c_y"></span>
+        </p>
+        <ul class="content_purchase_list">
+
+        </ul>
+        <div class="btn_submit btn_submit_two">
+            <span>修改申请</span>
+            <span>提交申请</span>
+        </div>
+    </div>
+</div>
+<script>
+    seajs.use('purchase_view',function(view){
+        view.init();
+    });
+</script>
+</body>
+</html>

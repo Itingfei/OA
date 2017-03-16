@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../bookstock/bookstock.iml" filepath="$PROJECT_DIR$/../bookstock/bookstock.iml" />
+      <module fileurl="file://D:/eclipseWorkSpace/SourceCode/ch11_1/ch11_1.iml" filepath="D:/eclipseWorkSpace/SourceCode/ch11_1/ch11_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../da_book/da_book.iml" filepath="$PROJECT_DIR$/../da_book/da_book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/da_oa.iml" filepath="$PROJECT_DIR$/da_oa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../smsdecrypt/smsdecrypt.iml" filepath="$PROJECT_DIR$/../smsdecrypt/smsdecrypt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../smsencryption/smsencryption.iml" filepath="$PROJECT_DIR$/../smsencryption/smsencryption.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../smsmanager/smsmanager.iml" filepath="$PROJECT_DIR$/../smsmanager/smsmanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../smsreceive/smsreceive.iml" filepath="$PROJECT_DIR$/../smsreceive/smsreceive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../smssender/smssender.iml" filepath="$PROJECT_DIR$/../smssender/smssender.iml" />
+    </modules>
+  </component>
+</project>

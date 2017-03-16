@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../static/common/css/common.css"/>
+    <script src="../static/common/js/sea.js"></script>
+</head>
+<body>
+<style>
+    .page{width: 100%;overflow-x: hidden;}
+    .header .header_title{position: relative;}
+    .content{position: relative;}
+    /*选项卡部分*/
+    .content_tab{display:none;background: #fff;}
+    .content_tab>div{-webkit-box-flex: 1;border-bottom: 1px solid #ededed;text-align: center;color:#666;font-size: 1rem;padding: 0.8rem 0;}
+    .content_tab>div:first-child{border-right: 1px solid #ededed;}
+    .content_tab>div.cur{color: #0099cc;border-bottom: none;}
+    .arrow_down{height:0.5rem;}
+    .arrow_down>i{top:-1rem;}
+    .header .arrow_down{height: 1rem;position: absolute;top:0.65rem;left: 66%;transform-origin:center 0.2rem;}
+    .header .arrow_down>i{border:2px solid #fff;}
+    /*选项卡展示部分*/
+    .content_tab_panl{background: #fff;border: 1px solid #ededed;border-top:none;padding:0 2%;width: 96%; position: relative}
+    .content_tab_panl span{padding: 0.5rem 1.3rem;font-size: 0.9rem;border: 1px solid #ededed;float:left;margin: 0.5rem 0.8rem;border-radius: 1.8rem;color:#666; }
+
+    .content_tab_panl p{ color:#54B2D8; width: 100%; display: block; float: left; text-align: center; margin-top: 0.8rem;}
+
+    .content_tab_panl span.check{background: #0c8ddb;color:#fff;border: 1px solid #0099cc;}
+    .content_tab_panl>div{display: none;padding: 0.5rem 0;}
+    /*审批列表*/
+    .content_approval{margin-top: 0.5rem;}
+    .content_approval .list_select li>span{display: none;}
+    .content_approval .list_select>li:before{display: block;}
+    .content_approval_list{background: #fff;width: 85%;padding-left: 15%;border: 1px solid #ededed;}
+    .content_approval_list li{border-bottom: 1px solid #ededed;padding:1rem 5% 0.6rem 0;width: 95%;position: relative;}
+    .content_approval_list li:last-child{border: none;}
+    .content_approval_list li>span{position: absolute;display: block;width: 10%;border-radius: 50%;left: -13.5%;}
+    .content_approval_list li>p{margin-top: 1rem;}
+    .content_approval_list li>.approval_title{line-height: 1rem;margin-top: 0;}
+    .content_approval_list>li:before{content:'';position: absolute;display: none;width: 2rem;height: 2rem;border: 1px solid #ededed;border-radius: 50%;left: -13.5%;top:38%;}
+    .content_approval_list li.check:before{content:'';background-image: url("../static/common/img/check_yellow.png");background-repeat: no-repeat;background-position: 50%;background-size: 60%;;background-color: #ff5b10;}
+    .approval_title>span:first-child{float: left;font-size: 1.05rem;color:#1a1a1a;}
+    .approval_title>span:last-child{float: right;font-size: 0.8rem;color:#f66627;}
+    .approval_detatil{font-size: 0.9rem;color: #373737;}
+    .approval_detatil>span:last-child { color: #8F8E8E; margin-left: 15px; font-size: 0.8rem}
+    .approval_date{font-size: 0.8rem;}
+    .approval_date>span:first-child{float:left;color:#999;}
+    .approval_date>span:last-child{float:right;color:#1a1a1a;}
+    .panel_left{position: relative;}
+    .panel_left_mask{border-right: 1px solid #ededed;display: none;position: absolute;top:0; left:0;width: 100%;height: 100%;z-index: 2;box-shadow:0.5rem -1px 0.5rem 1px #d5d5d5;background:rgba(255,255,255,0.8);}
+    .panel_right{position: absolute;top:0;left: 100%;width: 12.5rem;height: 100%;background: #fff;}
+    .panel_show>div{-webkit-transform: translate3d(-200px, 0, 0);transform: translate3d(-200px, 0, 0);-webkit-transition:all .2s ease;transition:all .2s ease;animation-fill-mode:forwards;}
+    .panel_hide>div{-webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);-webkit-transition:all .2s ease;transition:all .2s ease;animation-fill-mode:forwards;}
+    /*右侧选项*/
+    .approval_type{margin-top: 0.5rem;}
+    .approval_type li{padding-left: 3.5rem;}
+    .approval_type li>span{border-bottom: 1px solid #ededed;padding: 0.8rem 0;font-size: 1rem;line-height: 1.5rem;position: relative;display: block;}
+    .approval_type li>span:before{content:"";display: block;width: 1.2rem;height: 1.2rem;position: absolute;top: 1.1rem;left: -2rem;background: url("../static/work/img/icon.png") 0 0 ;background-size: 100%}
+    .approval_type li:nth-child(2)>span:before{background-position: 0 1.2rem;}
+    .approval_type li:nth-child(4)>span:before{background-position: 0 2.6rem;}
+    .approval_type li:nth-child(5)>span:before{background-position: 0 4rem;}
+    .approval_type li:nth-child(3)>span:before{background-position: 0 5.5rem;top:0.9rem;}
+    .approval_type li.check{background: #dbecfb;}
+
+    /*同意、驳回按钮*/
+    .approval_btns{display:none;position: fixed;left: 0;bottom: 0;width: 100%;}
+    .approval_btns>span{-webkit-box-flex: 1;font-size: 1rem;padding: 1rem 0;display: block;text-align: center;background: #fff;color:#333;border-top:1px solid #ededed;}
+    .approval_btns>span:last-child{color:#fff;background: #018bda;border-top:1px solid #018bda;}
+    /*同意、驳回弹框*/
+    .agreeBox{width: 60%;background: #fff;border-radius: 0.5rem;overflow: hidden;}
+    .agreeBox>p{font-size: 1rem;color:#333;text-align: center;width: 90%;margin: 2rem auto;}
+    .agreeBox>div{display: -webkit-box;border-top:1px solid #ededed;}
+    .agreeBox>div>span:first-child{border-right: 1px solid #ededed;color:#333;}
+    .agreeBox>div>span{display: block;-webkit-box-flex: 1;text-align: center;padding: 0.8rem 0;font-size: 1rem;color: #018bda;}
+    /*部门分类*/
+    .depart_class { color: #7D7D7D; padding: 0.6rem 0 0.6rem 1rem; box-sizing: border-box}
+    /*返回顶部按钮*/
+    .backTop { display: none; width: 2.2rem; height: 2.2rem; border-radius: 50%; background-image: url(../static/common/img/backtop.png);  background-size: 2.2rem;  position: fixed; bottom: 2rem; right: 1rem}
+    .writeCancle {  background: #fff;  border-radius: 0.5rem;  width: 16rem;  font-size: 0.9rem;  padding: 0 0.6rem;  }
+    .writeCancle>p { text-align: center; font-size: 1rem; padding: 1rem 0;}
+    .writeCancle>textarea {width:90%; width:-webkit-calc(100% - 1rem - 2px);margin: 0 auto; resize: none; height: 4rem;padding:0.5rem;}
+    .writeCancle>ul{ display: flex;}
+    .writeCancle>ul>li{ flex: 1; text-align: center; padding: 1rem 0; color: #20A9FF}
+    .writeCancle>ul>li:first-child{ border-right: 1px solid #BEBEBE}
+    /*提示*/
+    .content_approval .tip{ text-align: center; color: #A4A4A4; padding-top: 8.5rem; font-size: 0.9rem}
+    .content_approval .tip>img{ width: 7.4rem;}
+    .content_approval .tip>p{margin-top: 0.5rem;}
+</style>
+<div class="page">
+    <div class="content">
+        <div class="panel_left_mask"></div>
+        <div class="panel_left">
+            <div class="content_tab">
+                <div>
+                    <span>审批事项</span>
+                    <span class="arrow_down">
+                        <i></i>
+                    </span>
+                </div>
+                <div>
+                    <span>部门分类</span>
+                    <span class="arrow_down">
+                        <i></i>
+                    </span>
+                </div>
+            </div>
+            <div class="content_tab_panl">
+                <div class="clerafix tab_matter_panl">
+                    <span data-type="all" class="check">全部</span>
+                    <p class="sure">确定</p>
+                </div>
+                <div class="clerafix tab_department_panl">
+                    <span data-type="all" class="check">全部</span>
+                    <p class="sure">确定</p>
+                </div>
+            </div>
+            <div class="content_approval">
+                <ul class="content_approval_list">
+                </ul>
+                <!--置顶按钮-->
+                <div class="backTop"></div>
+            </div>
+            <div class="approval_btns">
+                <span>驳回</span>
+                <span>同意</span>
+            </div>
+        </div>
+        <div class="panel_right">
+            <ul class="approval_type">
+                <li data-id="1"><span>待审批的</span></li>
+                <li data-id="3"><span >已同意的</span></li>
+                <li data-id="2"><span >已驳回的</span></li>
+                <!--<li data-id="8"><span >我发起的</span></li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    seajs.use('approval',function(view){
+        view.init();
+    });
+</script>
+</body>
+</html>

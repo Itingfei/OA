@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongao.oa.dao.PositionUserOrganizationMapper">
+  <resultMap id="BaseResultMap" type="com.dongao.oa.pojo.PositionUserOrganization">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="position_organization_id" jdbcType="BIGINT" property="positionOrganizationId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="leader_id" jdbcType="BIGINT" property="leaderId" />
+  </resultMap>
+  <select id="selectLeader" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    SELECT
+	*
+    FROM
+        da_oa_position_user_organization
+    WHERE
+        da_oa_position_user_organization.position_organization_id = (
+            SELECT
+                id
+            FROM
+                da_oa_position_organization
+            WHERE
+                position_id = (
+                    SELECT
+                        da_oa_position.parent_id
+                    FROM
+                        da_oa_position
+                    WHERE
+                        id = (
+                            SELECT
+                                position_id
+                            FROM
+                                da_oa_position_organization
+                            WHERE
+                                org_id = #{0}
+                            AND position_id = #{1} AND del_flag = 0
+                        )
+                )and org_id = #{0}
+        )
+  </select>
+<select id="selectPUOByUserId" parameterType="java.lang.Long" resultType="java.util.Map">
+    SELECT * from da_oa_position_user_organization where user_id =#{0}
+</select>
+<select id="selectLowerLevel" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    SELECT
+	*
+FROM
+	da_oa_position_user_organization
+WHERE
+	da_oa_position_user_organization.position_organization_id = (
+SELECT
+			id
+		FROM
+			da_oa_position_organization
+		WHERE
+			position_id = (
+				SELECT
+					da_oa_position.id
+				FROM
+					da_oa_position INNER JOIN da_oa_position_organization dor ON da_oa_position.id  = dor.position_id AND dor.org_id = #{0}
+					INNER JOIN da_oa_position_user_organization duo ON dor.id = duo.position_organization_id
+				WHERE
+					parent_id = (
+						SELECT
+							position_id
+						FROM
+							da_oa_position_organization
+						WHERE
+							org_id = #{0}
+						AND position_id = #{1} AND del_flag = 0
+					)
+			) AND org_id = #{0}
+)
+</select>
+<select id="selectUserByOrgIdAndPostionName" resultMap="BaseResultMap" parameterType="java.util.Map">
+  SELECT
+	*
+FROM
+	da_oa_position_user_organization
+WHERE
+	position_organization_id in (
+		SELECT
+			id
+		FROM
+			da_oa_position_organization
+		WHERE
+			position_id in (
+				SELECT
+					id
+				FROM
+					da_oa_position
+				WHERE
+					`name` = #{positionName} and del_flag = 0
+			)
+		AND org_id = #{orgId}
+	)
+</select>
+<select id="selectSkipLowerLevel" parameterType="java.lang.Long" resultMap="BaseResultMap">
+	 SELECT
+	*
+FROM
+	da_oa_position_user_organization
+WHERE
+	da_oa_position_user_organization.position_organization_id in (
+		SELECT
+			id
+		FROM
+			da_oa_position_organization
+		WHERE
+			position_id in (
+				SELECT
+					p.id
+				FROM
+					da_oa_position p
+				INNER JOIN da_oa_position_organization dor ON p.id = dor.position_id
+				AND dor.org_id = #{0}
+				INNER JOIN da_oa_position_user_organization duo ON dor.id = duo.position_organization_id
+				WHERE
+					p.`level` &gt; (
+						SELECT
+							`level`
+						FROM
+							da_oa_position
+						WHERE
+							id = (
+								SELECT
+									position_id
+								FROM
+									da_oa_position_organization
+								WHERE
+									org_id = #{0}
+								AND position_id = #{1}
+								AND del_flag = 0
+							)
+					)
+				AND p.del_flag = 0
+				GROUP BY
+				p.`level`
+				<if test="sign != null" >
+					HAVING
+					count(1) = 1
+				</if>
+				ORDER BY
+					p.`level` DESC
+			)
+		AND org_id = #{0}
+	)
+</select>
+	<select id="selectSkipLeader" parameterType="java.lang.Long" resultMap="BaseResultMap">
+		SELECT
+		*
+		FROM
+		da_oa_position_user_organization
+		WHERE
+		da_oa_position_user_organization.position_organization_id = (
+		SELECT
+		id
+		FROM
+		da_oa_position_organization
+		WHERE
+		position_id = (
+		SELECT
+		p.id
+		FROM
+		da_oa_position p INNER JOIN da_oa_position_organization dor ON p.id = dor.position_id
+		AND dor.org_id = #{0}
+		INNER JOIN da_oa_position_user_organization duo ON dor.id = duo.position_organization_id
+		WHERE
+		p.`level` &lt; (
+		SELECT
+		`level`
+		FROM
+		da_oa_position
+		WHERE
+		id = (
+		SELECT
+		position_id
+		FROM
+		da_oa_position_organization
+		WHERE
+		org_id =  #{0}
+		AND position_id =  #{1}
+		AND del_flag = 0
+		)
+		AND del_flag = 0
+		)
+		ORDER BY
+		p.`level`
+		LIMIT 0,
+		1
+		) AND org_id = #{0}
+		)
+	</select>
+	<select id="selectByPositionName" parameterType="java.lang.String" resultMap="BaseResultMap">
+		SELECT
+			*
+		FROM
+			da_oa_position_user_organization
+		WHERE
+			position_organization_id in (
+				SELECT
+					id
+				FROM
+					da_oa_position_organization
+				WHERE
+					position_id = (
+						SELECT
+							id
+						FROM
+							da_oa_position
+						WHERE
+							`name` = #{0}
+						AND del_flag = 0
+					)
+			)
+	</select>
+	<select id="selectSkipOrgLeader" parameterType="java.lang.Long" resultMap="BaseResultMap">
+		SELECT
+			*
+		FROM
+			da_oa_position_user_organization WHERE position_organization_id=(
+				SELECT
+					id
+				FROM
+					da_oa_position_organization
+				WHERE
+					org_id = (
+						SELECT
+							id
+						FROM
+							da_oa_organization
+						WHERE
+							id = (
+								SELECT
+									parent_id
+								FROM
+									da_oa_organization
+								WHERE
+									id = #{0} AND del_flag = 0
+							) AND del_flag = 0
+					)
+				AND position_id = (
+					SELECT
+						parent_id
+					FROM
+						da_oa_position
+					WHERE
+						id = #{1} AND del_flag = 0
+				)
+			)
+	</select>
+</mapper>
