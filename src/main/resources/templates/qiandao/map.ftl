@@ -51,8 +51,8 @@
 
     map.centerAndZoom(point, 15);                //初始化地图，设置中心点坐标和地图级别
 
-    var myP1 = new BMap.Point(116.380967,39.913285);    //起点
-    var myP2 = new BMap.Point(116.424374,39.914668);    //终点
+//    var myP1 = new BMap.Point(116.380967,39.913285);    //起点
+//    var myP2 = new BMap.Point(116.424374,39.914668);    //终点
 
     //创建起点小狐狸
     var pt1 = new BMap.Point(116.380967,39.913285);
